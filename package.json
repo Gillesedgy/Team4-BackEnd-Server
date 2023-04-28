@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.22",
+    "pg": "^8.10.0",
+    "pg-promise": "^11.4.3"
+  },
+  "name": "team4-backend-server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "db:init": "psql -U postgres -f db/schema.sql",
+    "db:seed": "psql -U postgres -f db/seed.sql"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gillesedgy/Team4-BackEnd-Server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gillesedgy/Team4-BackEnd-Server/issues"
+  },
+  "homepage": "https://github.com/Gillesedgy/Team4-BackEnd-Server#readme",
+  "description": ""
+}
