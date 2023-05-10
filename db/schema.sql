@@ -5,59 +5,60 @@ CREATE DATABASE out_n_abt;
 
 DROP TABLE IF EXISTS users;
 
-CREATE TABLE users (
-    id serial PRIMARY KEY,
-    username varchar(50) NOT NULL,
+CREATE TABLE users(
+    id SERIAL PRIMARY KEY,
+    username TEXT UNIQUE,
     email TEXT NOT NULL,
-    password varchar(60) NOT NULL,
-    address varchar(30) NOT NULL,
-    language VARCHAR(50) NOT NULL,
+    password VARCHAR(250) NOT NULL,
+    address TEXT NOT NULL,
+    native_language VARCHAR(50) NOT NULL
+);
+
+DROP TABLE IF EXISTS categories;
+
+CREATE TABLE categories(
+ id SERIAL PRIMARY KEY,
+ name VARCHAR(250) NOT NULL
 );
 
 DROP TABLE IF EXISTS listings;
 
 CREATE TABLE listings(
     id SERIAL PRIMARY KEY,
-    users_id INTEGER REFERENCES Users(id),
+    user_id INTEGER REFERENCES users(id),
     description TEXT NOT NULL,
-    language VARCHAR(50) NOT NULL,
-    image_url TEXT,
+    native_language VARCHAR(50) NOT NULL,
+    image_url TEXT DEFAULT 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image',
     date_posted DATE NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     longitude DECIMAL (10, 6) NOT NULL,
     latitude DECIMAL (10, 6) NOT NULL,
     is_applied BOOLEAN DEFAULT FALSE,
-    category_id INTEGER REFERENCES Category(id),
+    category_id INTEGER REFERENCES categories(id),
     is_favorite BOOLEAN DEFAULT FALSE,
     title TEXT NOT NULL,
     company TEXT NOT NULL
 );
 
-DROP TABLE IF EXISTS categorys;
 
-CREATE TABLE categorys(
- id SERIAL PRIMARY KEY,
- name VARCHAR(250) NOT NULL
-);
+DROP TABLE IF EXISTS discussion_boards;
 
-DROP TABLE IF EXISTS discussion_board;
-
-CREATE TABLE discussion_board(
+CREATE TABLE discussion_boards(
     id SERIAL PRIMARY KEY,
-    user_id INTEGER REFERENCES User(id),
+    user_id INTEGER REFERENCES users(id),
     post_title VARCHAR(250) NOT NULL,
     post_content TEXT NOT NULL,
-    image_url TEXT,
-    created_at TIMESTAMP,
-    updated_at TIMESTAMP,
-    language VARCHAR(50) NOT NULL
+    image_url TEXT DEFAULT 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image',
+    created_at TIMESTAMP DEFAULT NOW(),
+    updated_at TIMESTAMP DEFAULT NOW(),
+    native_language VARCHAR(50) NOT NULL
 );
 
 DROP TABLE IF EXISTS comments;
 
 CREATE TABLE comments(
  id SERIAL PRIMARY KEY,
- user_id INTEGER REFERENCES User(id),
- discussion_board INTEGER REFERENCES discussion_board(id),
+ user_id INTEGER REFERENCES users(id),
+ discussion_board_id INTEGER REFERENCES discussion_boards(id),
  comment_body TEXT
 );
