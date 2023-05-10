@@ -1,41 +1,46 @@
 const db = require("../db/dbConfig")
 
-// Index
-async function getAllUsers() {
-  const allUsers = await db.any("SELECT * FROM users")
-  return allUsers
-}
-getAllUsers().catch((error) => console.error(error))
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
 
-// show
-async function getOneUser(user) {
-  const oneUser = await db.one("SELECT * FROM users WHERE username=$1", user)
-  return oneUser
-}
-getOneUser(user).catch((error) => console.error(error))
+const newUser = async (user) => {
+  const { username, email, password, address, native_language } = user;
+  try {
+    const salt = await bcrypt.genSalt(saltRounds);
 
-// create
-async function createUser(user) {
-  const newUser = await db.one(
-    " INSERT INTO users (username, email, password, address, native_language) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-    [
-      user.username,
-      user.email,
-      user.password,
-      user.address,
-      user.native_language,
-    ]
-  )
-  return newUser
-}
-createUser(user).catch((error) => console.error(error))
+    const hashedPassword = await bcrypt.hash(password, salt);
 
-//update
-async function deleteUser(user) {
-  const erasedUser = await db.one("DELETE FROM user WHERE user=$1")
-  return erasedUser
-}
+    const newUser = await db.one(
+      "INSERT INTO users(username, email, password, address, native_language) VALUES($1, $2, $3, $4, $5) RETURNING *",
+      [username, email, hashedPassword, address, native_language]
+    );
 
-deleteUser(user).catch((error) => console.error(error))
+    if (newUser) {
+      return newUser;
+    }
+  } catch (err) {
+    return err;
+  }
+};
 
-module.exports = { deleteUser, createUser, getOneUser, getAllUsers }
+const loginUser = async (user) => {
+  const { password, username } = user;
+  try {
+    const oneUser = await db.one("SELECT * FROM users WHERE username=$1", [
+      username,
+    ]);
+    if (oneUser) {
+      const foundUser = await bcrypt.compare(password, oneUser.password);
+
+      if (foundUser) {
+        const { username } = oneUser;
+        return { username };
+      }
+    }
+  } catch (err) {
+    return err;
+  }
+};
+
+module.exports = { newUser, loginUser };
+
