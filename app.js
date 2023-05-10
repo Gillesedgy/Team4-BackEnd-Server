@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express()
 const cors = require("cors")
-// const listingsController = require("./controllers/listingsController")
+const listingsController = require("./controllers/listingsController")
 // const discussionController = require("./controllers/discussion_boardsController")
 // const categoriesController = require("./controllers/categoriesController")
 // const commentsController = require("./controllers/commentsController")
@@ -16,7 +16,7 @@ app.use(cors())
 // app.use("/categories", categoriesController)
 // app.use("/comments", commentsController)
 // app.use("/discussion_boards", discussionController)
-// app.use("/listings", listingsController)
+app.use("/listings", listingsController)
 
 app.get("/", (req, res) => {
   res.send("Welcome to Out&Abt!!")
