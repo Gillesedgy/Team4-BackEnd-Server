@@ -5,14 +5,14 @@ const cors = require("cors")
 // const discussionController = require("./controllers/discussion_boardsController")
 // const categoriesController = require("./controllers/categoriesController")
 // const commentsController = require("./controllers/commentsController")
-// const usersController = require("./controllers/usersController")
+const usersController = require("./controllers/usersController")
 
 //MIDDLEWARE
 app.use(express.json())
 app.use(cors())
 
 //routes
-// app.use("/users", usersController)
+app.use("/users", usersController)
 // app.use("/categories", categoriesController)
 // app.use("/comments", commentsController)
 // app.use("/discussion_boards", discussionController)

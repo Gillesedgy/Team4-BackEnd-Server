@@ -24,14 +24,14 @@ INSERT INTO listings (user_id, description, native_language, image_url, date_pos
 (5, '漂亮的2居室公寓出租', 'Chinese', 'https://example.com/image5.jpg', '2022-05-15', 3000.00, -73.9781, 40.7501, false, 4, false, '豪华公寓', 'MNO Realty');
 
 
-INSERT INTO discussion_boards (user_id, post_title, post_content, image_url, native_language) VALUES
+INSERT INTO discussions_board (user_id, post_title, post_content, image_url, native_language) VALUES
 (1, 'Looking for a new recipe to try', 'Im tired of making the same meals all the time. Does anyone have a favorite recipe they like to share?', 'https://example.com/food.jpg', 'English'),
 (2, 'Recomendaciones de libros', 'Me gustaría leer algo nuevo y emocionante. ¿Alguien tiene alguna recomendación de libros?', NULL, 'Spanish'),
 (3, 'Conseils pour faire du yoga à la maison', 'Je suis nouveau dans le yoga et j aimerais en faire à la maison. Des conseils pour un débutant?', 'https://example.com/yoga.jpg', 'French'),
 (4, 'New hobby ideas', 'I need a new hobby to fill my free time. What are some hobbies that you enjoy?', NULL, 'English'),
 (5, 'Sugerencias de películas', 'Me encanta ver películas en mi tiempo libre. ¿Alguien tiene alguna sugerencia de películas para ver?', NULL, 'Spanish');
 
-INSERT INTO comments (user_id, discussion_board_id, comment_body) VALUES
+INSERT INTO comments (user_id, discussion_id, comment_body) VALUES
 (1, 1, 'I recommend checking out neighborhoods near the downtown area.'),
 (2, 1, 'I found a great apartment using Zillow. You should give it a try!'),
 (3, 2, 'Puedes buscar en sitios como Idealista o Fotocasa.'),
