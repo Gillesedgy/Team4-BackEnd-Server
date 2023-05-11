@@ -62,3 +62,19 @@ CREATE TABLE comments(
  discussion_id INTEGER REFERENCES discussions_board(id),
  comment_body TEXT
 );
+
+DROP TABLE IF EXISTS jobs;
+
+CREATE TABLE jobs(
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    job_title VARCHAR(250) NOT NULL,
+    company VARCHAR(250) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    location VARCHAR(250) NOT NULL,
+    posted_date TIMESTAMP DEFAULT NOW(),
+    job_type VARCHAR(250) NOT NULL,
+    description TEXT NOT NULL,
+    native_language VARCHAR(50) NOT NULL,
+    is_favorite BOOLEAN DEFAULT FALSE
+);
