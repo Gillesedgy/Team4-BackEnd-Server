@@ -80,17 +80,10 @@ DROP TABLE IF EXISTS comments;
 
 CREATE TABLE comments(
  id SERIAL PRIMARY KEY,
-<<<<<<< HEAD
  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
  discussions_id INTEGER REFERENCES discussions_board(id) ON DELETE CASCADE,
  comment_body TEXT,
  image_url TEXT DEFAULT 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'
-=======
- user_id INTEGER REFERENCES users(id),
- discussion_id INTEGER REFERENCES discussions_board(id),
- comment_body TEXT
-
->>>>>>> a4e60dd31698dc9c4e4d0e2016c559b8296197db
 );
 
 DROP TABLE IF EXISTS jobs;
