@@ -6,7 +6,7 @@ CREATE DATABASE out_n_abt;
 DROP TABLE IF EXISTS users;
 
 CREATE TABLE users(
-    user_id SERIAL PRIMARY KEY,
+   id SERIAL PRIMARY KEY,
     username TEXT UNIQUE,
     email TEXT NOT NULL,
     password VARCHAR(250) NOT NULL,
@@ -17,14 +17,14 @@ CREATE TABLE users(
 DROP TABLE IF EXISTS categories;
 
 CREATE TABLE categories(
- category_id SERIAL PRIMARY KEY,
+ id SERIAL PRIMARY KEY,
  name VARCHAR(250) NOT NULL
 );
 
 DROP TABLE IF EXISTS listings;
 
 CREATE TABLE listings(
-    listing_id SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users(user_id),
     description TEXT NOT NULL,
     native_language VARCHAR(50) NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE listings(
 DROP TABLE IF EXISTS discussions_board;
 
 CREATE TABLE discussions_board(
-    discussion_id SERIAL PRIMARY KEY,
+   id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users(user_id),
     post_title VARCHAR(250) NOT NULL,
     post_content TEXT NOT NULL,
@@ -57,7 +57,7 @@ CREATE TABLE discussions_board(
 DROP TABLE IF EXISTS comments;
 
 CREATE TABLE comments(
- comment_id SERIAL PRIMARY KEY,
+id SERIAL PRIMARY KEY,
  user_id INTEGER REFERENCES users(user_id),
  discussion_id INTEGER REFERENCES discussions_board(discussion_id),
  comment_body TEXT
