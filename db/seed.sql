@@ -21,7 +21,8 @@ INSERT INTO listings (user_id, description, native_language, image_url, date_pos
 (2, 'Hermosa casa en alquiler en el centro de la ciudad', 'Spanish', 'https://example.com/image2.jpg', '2022-02-15', 1500.00, -73.9876, 40.7452, false, 2, false, 'Casa Grande', 'DEF Realty'),
 (3, 'Belle maison à louer avec vue sur la mer', 'French', 'https://example.com/image3.jpg', '2022-03-22', 2500.00, -73.9825, 40.7525, false, 3, false, 'Maison de Luxe', 'GHI Realty'),
 (4, 'Cozy studio apartment near downtown', 'English', 'https://example.com/image4.jpg', '2022-04-30', 1000.00, -73.9802, 40.7489, false, 1, false, 'Studio Apartment', 'JKL Realty'),
-(5, '漂亮的2居室公寓出租', 'Chinese', 'https://example.com/image5.jpg', '2022-05-15', 3000.00, -73.9781, 40.7501, false, 4, false, '豪华公寓', 'MNO Realty');
+(5, '漂亮的2居室公寓出租', 'Chinese', 'https://example.com/image5.jpg', '2022-05-15', 3000.00, -73.9781, 40.7501, false, 4, false, '豪华公寓', 'MNO Realty'),
+
 
 
 INSERT INTO discussions_board (user_id, post_title, post_content, image_url, native_language) VALUES
