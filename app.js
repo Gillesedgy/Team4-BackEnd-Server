@@ -1,11 +1,13 @@
 const express = require("express")
 const app = express()
 const cors = require("cors")
+
+const usersController = require("./controllers/usersController")
 const listingsController = require("./controllers/listingsController")
-// const discussionController = require("./controllers/discussion_boardsController")
+const discussionController = require("./controllers/discussion_boardsController")
 // const categoriesController = require("./controllers/categoriesController")
 // const commentsController = require("./controllers/commentsController")
-const usersController = require("./controllers/usersController")
+const jobsController = require("./controllers/jobsController")
 
 //MIDDLEWARE
 app.use(express.json())
@@ -15,8 +17,9 @@ app.use(cors())
 app.use("/users", usersController)
 // app.use("/categories", categoriesController)
 // app.use("/comments", commentsController)
-// app.use("/discussion_boards", discussionController)
+app.use("/discussions", discussionController)
 app.use("/listings", listingsController)
+app.use('/jobs', jobsController)
 
 app.get("/", (req, res) => {
   res.send("Welcome to Out&Abt!!")

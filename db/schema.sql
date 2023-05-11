@@ -38,6 +38,7 @@ CREATE TABLE listings(
     is_favorite BOOLEAN DEFAULT FALSE,
     title TEXT NOT NULL,
     company TEXT NOT NULL
+    
 );
 
 
@@ -52,6 +53,7 @@ CREATE TABLE discussions_board(
     created_at TIMESTAMP DEFAULT NOW(),
     updated_at TIMESTAMP DEFAULT NOW(),
     native_language VARCHAR(50) NOT NULL
+   
 );
 
 DROP TABLE IF EXISTS comments;
@@ -61,6 +63,7 @@ CREATE TABLE comments(
  user_id INTEGER REFERENCES users(id),
  discussion_id INTEGER REFERENCES discussions_board(id),
  comment_body TEXT
+
 );
 
 DROP TABLE IF EXISTS jobs;
@@ -77,4 +80,5 @@ CREATE TABLE jobs(
     description TEXT NOT NULL,
     native_language VARCHAR(50) NOT NULL,
     is_favorite BOOLEAN DEFAULT FALSE
+   
 );
