@@ -3,9 +3,10 @@ const db = require("../db/dbConfig")
 // Index list of comments
 async function getAllCategories() {
   try {
-    const categories = await db.any("SELECT * FROM catergories")
+    const categories = await db.any("SELECT * FROM categories")
     return categories
   } catch (error) {
+    // console.log("getAllCategories error", error)
     return error
   }
 }
@@ -19,6 +20,7 @@ async function getCategories(id) {
     )
     return oneCategories
   } catch (error) {
+    // console.log("getCategories error", error)
     return error
   }
 }
