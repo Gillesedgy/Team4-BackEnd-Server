@@ -28,7 +28,7 @@ router.get("/:id", async (req, res) => {
     ? res.status(200).json(oneListing)
     : res.status(404).json({ error: "Listing not Found!" })
 })
-
+// another show function for users group of listings
 // CREATE
 router.post("/", async (req, res) => {
   const newlisting = await addListing(req.body)
