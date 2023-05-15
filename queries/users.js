@@ -3,7 +3,7 @@ const db = require("../db/dbConfig")
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
-const newUser = async (user) => {
+const signUpUser = async (user) => {
   const { username, email, password, address, native_language } = user;
   try {
     const salt = await bcrypt.genSalt(saltRounds);
@@ -42,5 +42,51 @@ const loginUser = async (user) => {
   }
 };
 
-module.exports = { newUser, loginUser };
+const userProfile = async (id) => {
+  try {
+    const user = await db.one("SELECT * FROM users WHERE id=$1", id);
+    return user;
+  } catch (err) {
+    return err;
+  }
+};
+
+const userListings = async (id) => {
+  try {
+    const listings = await db.one(
+      "SELECT * FROM users INNER JOIN listings ON users.id = listings.user_id WHERE users.id=$1",
+      id
+    );
+   
+    return listings;
+  } catch (err) {
+    return err;
+  }
+};
+
+const userDiscussion = async (id) => {
+  try {
+    const discussion = await db.one(
+      "SELECT * FROM users INNER JOIN discussions_board ON users.id = discussions_board.user_id WHERE users.id=$1",
+      id
+    );
+    return discussion;
+  } catch (err) {
+    return err;
+  }
+};
+
+const userJob = async (id) => {
+  try {
+    const job = await db.one(
+      "SELECT * FROM users INNER JOIN jobs ON users.id = jobs.user_id WHERE users.id=$1",
+      id
+    );
+    return job;
+  } catch (err) {
+    return err;
+  }
+};
+
+module.exports = { signUpUser, loginUser, userProfile, userListings,userDiscussion, userJob };
 
