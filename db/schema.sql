@@ -54,7 +54,7 @@ CREATE TABLE listings(
     is_applied BOOLEAN DEFAULT FALSE,
     is_favorite BOOLEAN DEFAULT FALSE,
     title TEXT NOT NULL,
-    company TEXT 
+    company TEXT
 );
 
 DROP TABLE IF EXISTS discussions_board;
