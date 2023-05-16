@@ -32,9 +32,8 @@ users.post("/signup", validInfo, async (req, res) => {
 users.post("/login", validInfo, async (req, res) => {
   try {
     const user = await loginUser(req.body);
-
-    if (user) {
-      const { username } = user;
+    const { username } = user;
+    if (username) {
       res.status(200).json({ message: "login successful", username });
     } else {
       res.status(200).json({ message: "user not found" });
@@ -52,8 +51,8 @@ users.get("/profile/:id", async (req, res) => {
 
     const user = await userProfile(id);
 
-    if(!user.id){
-      res.json({message:"no user found"})
+    if (!user.id) {
+      res.json({ message: "no user found" });
     }
 
     // const token = jwtGenerator(user.id);
@@ -73,9 +72,9 @@ users.get("/profile/listings/:id", async (req, res) => {
     const { id } = req.params;
 
     const user = await userListings(id);
-   
-    if(!user.id){
-      res.json({message:"you have no listings"})
+
+    if (!user.id) {
+      res.json({ message: "you have no listings" });
     }
     res.json(user);
   } catch (err) {
@@ -89,8 +88,8 @@ users.get("/profile/jobs/:id", async (req, res) => {
 
     const user = await userJob(id);
 
-    if(user.result.rowCount === 0){
-      res.json({message:"you have no job listings"})
+    if (user.result.rowCount === 0) {
+      res.json({ message: "you have no job listings" });
     }
 
     //const { username, job_title, company } =  user;
@@ -109,8 +108,8 @@ users.get("/profile/discussion/:id", async (req, res) => {
 
     const user = await userDiscussion(id);
 
-    if(!user.id){
-      res.json({message:"you have discussions"})
+    if (!user.id) {
+      res.json({ message: "you have discussions" });
     }
 
     const { username, post_title, post_content } = user;
