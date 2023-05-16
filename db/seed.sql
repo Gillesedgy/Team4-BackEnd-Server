@@ -1,19 +1,28 @@
 \c  out_n_abt;
 
 INSERT INTO users (username, email, password, address, native_language, image_url) VALUES 
-('nick', 'nick@gmail.com', 'password123', '123 Main St, NY, NY, 10001', 'English','https://example.com/image1.jpg'),
-('JannyAdams', 'janedoe@gmail.com', 'qwerty123', '456 High St, Queenz, NY, 10002', 'Spanish','https://example.com/image2.jpg'),
-('BobSmith', 'bobsmith@yahoo.com', 'pass1234', '142 Linden blvd, Queenz, NY', 'French','https://example.com/image12.jpg'),
-('MaryJohnson', 'maryj@gmail.com', 'mysecurepassword', '111 concord St, Bronx, NY', 'English','https://example.com/image7.jpg'),
-('DavidLee', 'davidlee@hotmail.com', 'mypassword123', '555 Franklin St, Brooklyn, NY', 'Chinese','https://example.com/image9.jpg'),
-('EricSmith', 'ericsmith@gmail.com', 'mypassword123', '777 Broadway, Queens, NY', 'French','https://example.com/image8.jpg'),
+('nickolaus dymaikvi', 'nickd@gmail.com', 'password123', '123 Main St, NY, NY, 10001', 'German','https://example.com/image1.jpg'),
+('JuliaAndrews', 'juliaAndrews@gmail.com', 'qwerty123', '456 High St, Queenz, NY, 10002', 'Spanish','https://example.com/image2.jpg'),
+('MikeGonzalez', 'MikeGonzalez@yahoo.com', 'pass1234', '142 Linden blvd, Queenz, NY', 'French','https://example.com/image12.jpg'),
+('MaryJackson', 'maryjackson@gmail.com', 'mysecurepassword', '111 concord St, Bronx, NY', 'English','https://example.com/image7.jpg'),
+('DaveLee', 'davelee@hotmail.com', 'mypassword123', '555 Franklin St, Brooklyn, NY', 'Chinese','https://example.com/image9.jpg'),
+('EricSmithy', 'eric@gmail.com', 'mypassword123', '777 Broadway, Queens, NY', 'French','https://example.com/image8.jpg'),
 ('Edgy', 'edgy65@gmail.com', 'mypa23', '888 Bedford, NY', 'Creole','https://example.com/image10.jpg'),
 ('Mina', 'mina07@gmail.com', 'mypassword123', '179 Thomas lane, Queens Village, NY', 'French','https://example.com/image11.jpg'),
 ('Dilruba', 'dilruba23@gmail.com', 'my123dil', '17 Forest Street, Queens, NY', 'French','https://example.com/image12.jpg'),
 ('Nikesh', 'nikesh11@gmail.com', 'myword1nik23', '228 Linden blvd, Queens, NY', 'French','https://example.com/image13.jpg'),
-('Lennie', 'lennie12@gmail.com', 'passlen123', '127 east 45 street, brooklyn, NY', 'English','https://example.com/image14.jpg'),
-('JD', 'jd23@gmail.com', 'jdworld30', '888 Broadway, Queens, NY', 'French','https://example.com/image15.jpg'),
-('Carlos', 'carlos47@gmail.com', 'carlopass123', '777 Broad, brooklyn, NY', 'English','https://example.com/image16.jpg');
+('Lennie', 'lennie12@gmail.com', 'passlen123', '127 east 45 street, brooklyn, NY', 'Spanish','https://example.com/image14.jpg'),
+('JD', 'jd23@gmail.com', 'jdworld30', '100 east 77st , Manhattan, NY', 'French','https://example.com/image15.jpg'),
+('Carlos', 'carlos47@gmail.com', 'carlopass123', '777 Broad, brooklyn, NY', 'English','https://example.com/image16.jpg'),
+('Destiny', 'destiny@gmail.com', 'destiny30', '140 President street, Brooklyn, NY', 'Spanish','https://example.com/image17.jpg'),
+('jacksonjim', 'jacksonjim@gmail.com', 'jacksonhouse30', '222 Weller lane, Queens, NY', 'English','https://example.com/image18.jpg'),
+('Triane', 'tritri12@gmail.com', 'trigirl', '888 Broadway, Queens, NY', 'English','https://example.com/image19.jpg'),
+('RhulaNadu', 'rhulaN@gmail.com', 'naduhouseruler', '888 Broadway, Queens, NY', 'Arabic','https://example.com/image20.jpg'),
+('Aamir Kapoor', 'Akapoor@gmail.com', 'akapor007', '888 Jamaica Ave, Queens, NY', 'Bangali','https://example.com/image21.jpg'),
+('Dan Mazzili', 'DanM@gmail.com', 'Mazziliworld30', ' 346 Hunter Ave, Staten island, NY', 'italian','https://example.com/image22.jpg'),
+('Johannes Bauer', 'jim@gmail.com', 'jBauer1230', '180 Fremont Ave, Staten island, NY', 'German','https://example.com/image23.jpg');
+
+
 
 
 INSERT INTO categories (name) VALUES
@@ -24,7 +33,7 @@ INSERT INTO categories (name) VALUES
 ('Food'),
 ('Casas'),
 ('Housing'),
-('Language exchange'),
+('Language'),
 ('Other'),
 ('Activities'),
 ('Jobs'),
@@ -43,19 +52,14 @@ INSERT INTO listings (user_id, description, native_language, image_url, date_pos
 (10, '맨해튼에 위치한 아늑하고 저소득층을 위한 1베드룸 아파트로 멋진 크기의 주방과 커뮤니티 정원이 있습니', 'Korean', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-10', 900.00, -74.0060, 40.7128, FALSE, FALSE, '다. Whole Foods와 가깝습니다', NULL, 1),
 (11, 'Phòng giá cả phải chăng trong căn hộ chung ở Staten Island. Nằm gần bến phà, không chấp nhận thú cưng', 'Vietnamese', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-13', 500.00, -74.0776, 40.5795, FALSE, FALSE, 'Căn hộ chung ở Staten Island.', NULL, 1),
 (12, 'Affordable 2-bedroom  with 1 bathroom apartment in Queens. Close to the shopping center. ', 'English', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-15', 1000.00, -73.8099, 40.7282, FALSE, FALSE, 'Affordable senior housing in Queens', NULL, 2),
-(13, 'Affordable one-bedroom apartment in Queens for low-income families. Close to public transportation and local schools.', 'English', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-01', 1200.00, -73.827726, 40.701231, FALSE, FALSE, 'One-Bedroom Apartment in Queens',NULL, 1),
+(13, 'Affordable one-bedroom apartment in Queens for low-income families. Close to public transportation and local schools.', 'English', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-01', 1200.00, -73.827726, 40.701231, FALSE, FALSE, 'One-Bedroom Apartment in Queens', NULL, 1),
 (14, 'Estudio para personas de bajos ingresos en Brooklyn. Cerca del transporte público y servicios locales.', 'Spanish', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-03', 900.00, -73.950971, 40.694474, FALSE, FALSE, 'Estudio en Brooklyn.', NULL, 0),
-(15, 'Affordable one-bedroom apartment in Queens for low-income families. Close to public transportation and local schools.', 'English', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-01', 1200.00, -73.827726, 40.701231, FALSE, FALSE,'One-Bedroom Apartment in Queens',NULL,1),
+(15, 'Affordable one-bedroom apartment in Queens for low-income families. Close to public transportation and local schools.', 'English', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-01', 1200.00, -73.827726, 40.701231, FALSE, FALSE,'One-Bedroom Apartment in Queens', NULL, 1),
 (16, 'Studio apartment for low-income individuals in Brooklyn. Close to public transportation and local amenities.', 'Spanish', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-03', 900.00, -73.950971, 40.694474, FALSE, FALSE, 'Studio Apartment in Brooklyn', NULL, 0),
-(17, 'ترجمة الجملة إلى العربية: "شقة بغرفتي نوم واسعة في برونكس للعائلات ذات الدخل المنخفض. تم تجديدها ', 'Arabic', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-06', 1500.00, -73.868353, 40.841350, FALSE, FALSE, 'مؤخرًا بواسطة أجهزة جديدة. شقة بغرفتي نوم في برونكس',NULL, 2),
+(17, 'ترجمة الجملة إلى العربية: "شقة بغرفتي نوم واسعة في برونكس للعائلات ذات الدخل المنخفض. تم تجديدها ', 'Arabic', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-06', 1500.00, -73.868353, 40.841350, FALSE, FALSE, 'مؤخرًا بواسطة أجهزة جديدة. شقة بغرفتي نوم في برونكس', NULL, 2),
 (18, 'ম্যানহাটানে কম আয়ের বৃদ্ধ জনদের জন্য একটি আবাসিক একক বেডরুমের আপার্টমেন্ট। স্থানীয় হাসপাতাল এবং সম্প্রদায় কেন্দ্রের কাছাকাছি।', 'Bangali', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-10', 1000.00, -73.984168, 40.769718, FALSE, FALSE, 'ম্যানহাটানে বৃদ্ধ জনদের জন্য একটি একক বেডরুমের আপার্টমেন্ট।', NULL, 1),
-(19, '"Appartamento conveniente di tre camere da letto a Staten Island per famiglie a basso reddito. Include un cortile e un garage.', 'italian', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-12', 1800.00, -74.144577, 40.582465, FALSE, FALSE,' Appartamento di tre camere da letto a Staten Island..', NULL, 3),
-(20, 'Günstige Zweizimmerwohnung in Staten Island für einkommensschwache Familien. Enthält einen Hinterhof und eine Garage.', 'German', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-16', 1800.00, -74.144577, 40.582465, FALSE, FALSE,'Dreizimmerwohnung in Staten Island.', NULL, 2),
-
-
-
-
-
+(19, 'Appartamento conveniente di tre camere da letto a Staten Island per famiglie a basso reddito. Include un cortile e un garage.', 'italian', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-12', 1800.00, -74.144577, 40.582465, FALSE, FALSE,' Appartamento di tre camere da letto a Staten Island.', NULL, 3),
+(20, 'Günstige Zweizimmerwohnung in Staten Island für einkommensschwache Familien. Enthält einen Hinterhof und eine Garage.', 'German', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-16', 1800.00, -74.144577, 40.582465, FALSE, FALSE,'Dreizimmerwohnung in Staten Island.', NULL, 2);
 
 
 INSERT INTO discussions_board (user_id, post_title, post_content, image_url, native_language) VALUES
