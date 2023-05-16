@@ -80,7 +80,7 @@ CREATE TABLE jobs(
     job_type VARCHAR(250) NOT NULL,
     description TEXT NOT NULL,
     native_language VARCHAR(50) NOT NULL,
-    is_favorite BOOLEAN DEFAULT FALSE
+    is_favorite BOOLEAN DEFAULT FALSE,
     skills TEXT, 
     requirements TEXT,
     salary DECIMAL(10, 2)
