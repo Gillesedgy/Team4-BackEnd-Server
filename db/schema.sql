@@ -23,24 +23,6 @@ CREATE TABLE categories(
 );
 
 
-DROP TABLE IF EXISTS jobs;
-
-CREATE TABLE jobs(
-    id SERIAL PRIMARY KEY,
-    user_id INTEGER REFERENCES users(id),
-    job_title VARCHAR(250) NOT NULL,
-    company VARCHAR(250),
-    email VARCHAR(50) NOT NULL,
-    location VARCHAR(250) NOT NULL,
-    posted_date TIMESTAMP DEFAULT NOW(),
-    job_type VARCHAR(250) NOT NULL,
-    description TEXT NOT NULL,
-    native_language VARCHAR(50) NOT NULL,
-    is_favorite BOOLEAN DEFAULT FALSE
-    skills TEXT, 
-    requirements_requirements TEXT,
-    salary DECIMAL(10, 2)
-);
 
 DROP TABLE IF EXISTS listings;
 
@@ -85,3 +67,21 @@ CREATE TABLE comments(
  image_url TEXT DEFAULT 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'
 );
 
+DROP TABLE IF EXISTS jobs;
+
+CREATE TABLE jobs(
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    job_title VARCHAR(250) NOT NULL,
+    company VARCHAR(250),
+    email VARCHAR(50) NOT NULL,
+    location VARCHAR(250) NOT NULL,
+    posted_date TIMESTAMP DEFAULT NOW(),
+    job_type VARCHAR(250) NOT NULL,
+    description TEXT NOT NULL,
+    native_language VARCHAR(50) NOT NULL,
+    is_favorite BOOLEAN DEFAULT FALSE
+    skills TEXT, 
+    requirements TEXT,
+    salary DECIMAL(10, 2)
+);
