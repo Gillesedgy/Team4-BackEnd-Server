@@ -1,26 +1,26 @@
 \c  out_n_abt;
 
 INSERT INTO users (username, email, password, address, native_language, image_url) VALUES 
-('nickolaus dymaikvi', 'nickd@gmail.com', 'password123', '123 Main St, NY, NY, 10001', 'German','https://example.com/image1.jpg'),
-('JuliaAndrews', 'juliaAndrews@gmail.com', 'qwerty123', '456 High St, Queenz, NY, 10002', 'Spanish','https://example.com/image2.jpg'),
-('MikeGonzalez', 'MikeGonzalez@yahoo.com', 'pass1234', '142 Linden blvd, Queenz, NY', 'French','https://example.com/image12.jpg'),
-('MaryJackson', 'maryjackson@gmail.com', 'mysecurepassword', '111 concord St, Bronx, NY', 'English','https://example.com/image7.jpg'),
-('DaveLee', 'davelee@hotmail.com', 'mypassword123', '555 Franklin St, Brooklyn, NY', 'Chinese','https://example.com/image9.jpg'),
-('EricSmithy', 'eric@gmail.com', 'mypassword123', '777 Broadway, Queens, NY', 'French','https://example.com/image8.jpg'),
-('Edgy', 'edgy65@gmail.com', 'mypa23', '888 Bedford, NY', 'Creole','https://example.com/image10.jpg'),
-('Mina', 'mina07@gmail.com', 'mypassword123', '179 Thomas lane, Queens Village, NY', 'French','https://example.com/image11.jpg'),
-('Dilruba', 'dilruba23@gmail.com', 'my123dil', '17 Forest Street, Queens, NY', 'French','https://example.com/image12.jpg'),
-('Nikesh', 'nikesh11@gmail.com', 'myword1nik23', '228 Linden blvd, Queens, NY', 'French','https://example.com/image13.jpg'),
-('Lennie', 'lennie12@gmail.com', 'passlen123', '127 east 45 street, brooklyn, NY', 'Spanish','https://example.com/image14.jpg'),
-('JD', 'jd23@gmail.com', 'jdworld30', '100 east 77st , Manhattan, NY', 'French','https://example.com/image15.jpg'),
-('Carlos', 'carlos47@gmail.com', 'carlopass123', '777 Broad, brooklyn, NY', 'English','https://example.com/image16.jpg'),
-('Destiny', 'destiny@gmail.com', 'destiny30', '140 President street, Brooklyn, NY', 'Spanish','https://example.com/image17.jpg'),
-('jacksonjim', 'jacksonjim@gmail.com', 'jacksonhouse30', '222 Weller lane, Queens, NY', 'English','https://example.com/image18.jpg'),
-('Triane', 'tritri12@gmail.com', 'trigirl', '888 Broadway, Queens, NY', 'English','https://example.com/image19.jpg'),
-('RhulaNadu', 'rhulaN@gmail.com', 'naduhouseruler', '888 Broadway, Queens, NY', 'Arabic','https://example.com/image20.jpg'),
-('Aamir Kapoor', 'Akapoor@gmail.com', 'akapor007', '888 Jamaica Ave, Queens, NY', 'Bangali','https://example.com/image21.jpg'),
-('Dan Mazzili', 'DanM@gmail.com', 'Mazziliworld30', ' 346 Hunter Ave, Staten island, NY', 'italian','https://example.com/image22.jpg'),
-('Johannes Bauer', 'jim@gmail.com', 'jBauer1230', '180 Fremont Ave, Staten island, NY', 'German','https://example.com/image23.jpg');
+('nickolaus dymaikvi', 'nickd@gmail.com', 'password123', '123 Main St, NY, NY, 10001', 'German','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('JuliaAndrews', 'juliaAndrews@gmail.com', 'qwerty123', '456 High St, Queenz, NY, 10002', 'Spanish','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('MikeGonzalez', 'MikeGonzalez@yahoo.com', 'pass1234', '142 Linden blvd, Queenz, NY', 'French','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('MaryJackson', 'maryjackson@gmail.com', 'mysecurepassword', '111 concord St, Bronx, NY', 'English','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('DaveLee', 'davelee@hotmail.com', 'mypassword123', '555 Franklin St, Brooklyn, NY', 'Chinese','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('EricSmithy', 'eric@gmail.com', 'mypassword123', '777 Broadway, Queens, NY', 'French','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Edgy', 'edgy65@gmail.com', 'mypa23', '888 Bedford, NY', 'Creole','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Mina', 'mina07@gmail.com', 'mypassword123', '179 Thomas lane, Queens Village, NY', 'French','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Dilruba', 'dilruba23@gmail.com', 'my123dil', '17 Forest Street, Queens, NY', 'French','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Nikesh', 'nikesh11@gmail.com', 'myword1nik23', '228 Linden blvd, Queens, NY', 'French','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Lennie', 'lennie12@gmail.com', 'passlen123', '127 east 45 street, brooklyn, NY', 'Spanish','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('JD', 'jd23@gmail.com', 'jdworld30', '100 east 77st , Manhattan, NY', 'French','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Carlos', 'carlos47@gmail.com', 'carlopass123', '777 Broad, brooklyn, NY', 'English','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Destiny', 'destiny@gmail.com', 'destiny30', '140 President street, Brooklyn, NY', 'Spanish','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('jacksonjim', 'jacksonjim@gmail.com', 'jacksonhouse30', '222 Weller lane, Queens, NY', 'English','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Triane', 'tritri12@gmail.com', 'trigirl', '888 Broadway, Queens, NY', 'English','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('RhulaNadu', 'rhulaN@gmail.com', 'naduhouseruler', '888 Broadway, Queens, NY', 'Arabic','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Aamir Kapoor', 'Akapoor@gmail.com', 'akapor007', '888 Jamaica Ave, Queens, NY', 'Bangali','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Dan Mazzili', 'DanM@gmail.com', 'Mazziliworld30', ' 346 Hunter Ave, Staten island, NY', 'italian','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Johannes Bauer', 'jim@gmail.com', 'jBauer1230', '180 Fremont Ave, Staten island, NY', 'German','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image');
 
 
 
@@ -40,11 +40,11 @@ INSERT INTO categories (name) VALUES
 ('Rentals');
 
 INSERT INTO listings (user_id, description, native_language, image_url, date_posted, price, longitude, latitude, is_applied, is_favorite, title, company, rooms) VALUES 
-(1, 'Beautiful 2-bedroom apartment for rent. A five minute walk to the nearest train station. pet friendly ', 'English', 'https://example.com/image1.jpg', '2023-05-01', 2000.00, -73.9857, 40.7484, false, false, 'Spacious Apartment', 'ABC Realty', 2),
-(2, 'Hermosa casa en alquiler en el centro de la ciudad', 'Spanish', 'https://example.com/image2.jpg', '2022-02-15', 1500.00, -73.9876, 40.7452, false, false, 'Casa Grande', 'DEF Realty', 3),
-(3, 'Un bel appartement de 3 chambres avec 1 salle de bain avec laveuse et secheuse. ll est situe pres de la communaute pour les courses.', 'French', 'https://example.com/image3.jpg', '2022-03-22', 2500.00, -73.9825, 40.7525, false, false, 'Maison de Luxe', 'GHI Realty', 3),
-(4, 'Cozy studio apartment with a eat in kitchen near downtown looking over the bridge. There is washer and dryer in the build. Transport is 2 blocks away.', 'English', 'https://example.com/image4.jpg', '2022-04-30', 1000.00, -73.9802, 40.7489, false, false, 'Studio Apartment', 'JKL Realty', 0),
-(5, '漂亮的2居室公寓出租', 'Chinese', 'https://example.com/image5.jpg', '2022-05-15', 3000.00, -73.9781, 40.7501, false, false, '豪华公寓', 'MNO Realty',3),
+(1, 'Beautiful 2-bedroom apartment for rent. A five minute walk to the nearest train station. pet friendly ', 'English', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-01', 2000.00, -73.9857, 40.7484, false, false, 'Spacious Apartment', 'ABC Realty', 2),
+(2, 'Hermosa casa en alquiler en el centro de la ciudad', 'Spanish', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2022-02-15', 1500.00, -73.9876, 40.7452, false, false, 'Casa Grande', 'DEF Realty', 3),
+(3, 'Un bel appartement de 3 chambres avec 1 salle de bain avec laveuse et secheuse. ll est situe pres de la communaute pour les courses.', 'French', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2022-03-22', 2500.00, -73.9825, 40.7525, false, false, 'Maison de Luxe', 'GHI Realty', 3),
+(4, 'Cozy studio apartment with a eat in kitchen near downtown looking over the bridge. There is washer and dryer in the build. Transport is 2 blocks away.', 'English', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2022-04-30', 1000.00, -73.9802, 40.7489, false, false, 'Studio Apartment', 'JKL Realty', 0),
+(5, '漂亮的2居室公寓出租', 'Chinese', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2022-05-15', 3000.00, -73.9781, 40.7501, false, false, '豪华公寓', 'MNO Realty',3),
 (6, 'Affordable studio apartment with terrace and full kitchen in the Bronx. location is near yankees station. easy access to public transportation ', 'English', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-01', 1000.00, -73.9127, 40.8339,FALSE, FALSE, 'Studio apartment in the Bronx', NULL, 1),
 (7, 'Yon apatman 2 chanm espasye ak 1 twalet ak lave linge ak sech. Li sitiye pre kominote pou achte manje, lekol ak sant pwovizwa. Li akeyi bet kay. Li gen 3 blok soti nan gare a.', 'Creole', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-01', 1000.00, -73.8099, 40.7282, FALSE, FALSE, 'Affordable senior housing in Queens', NULL, 2),
 (8, 'Departamento de un dormitorio y un baño de bajo costo con amplia sala y vista al parque.', 'Spanish', 'https://dummyimage.com/400x400/6e6c6e/e9ef5.png&text=No+Image', '2023-05-05', 800.00, -73.8099, 40.7282, FALSE, FALSE, 'Viviendas accesibles para personas mayores en Queens',  NULL, 1),
@@ -63,18 +63,18 @@ INSERT INTO listings (user_id, description, native_language, image_url, date_pos
 
 
 INSERT INTO discussions_board (user_id, post_title, post_content, image_url, native_language) VALUES
-(1, 'Looking for a new recipe to try', 'Im tired of making the same meals all the time. Does anyone have a favorite recipe they like to share?', 'https://example.com/food.jpg', 'English'),
+(1, 'Looking for a new recipe to try', 'Im tired of making the same meals all the time. Does anyone have a favorite recipe they like to share?', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', 'English'),
 (2, 'Recomendaciones de libros', 'Me gustaría leer algo nuevo y emocionante. ¿Alguien tiene alguna recomendación de libros?', NULL, 'Spanish'),
-(3, 'Conseils pour faire du yoga à la maison', 'Je suis nouveau dans le yoga et j aimerais en faire à la maison. Des conseils pour un débutant?', 'https://example.com/yoga.jpg', 'French'),
+(3, 'Conseils pour faire du yoga à la maison', 'Je suis nouveau dans le yoga et j aimerais en faire à la maison. Des conseils pour un débutant?', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', 'French'),
 (4, 'New hobby ideas', 'I need a new hobby to fill my free time. What are some hobbies that you enjoy?', NULL, 'English'),
 (5, 'Sugerencias de películas', 'Me encanta ver películas en mi tiempo libre. ¿Alguien tiene alguna sugerencia de películas para ver?', NULL, 'Spanish');
 
 INSERT INTO comments (user_id, discussions_id, comment_body,image_url) VALUES
-(1, 1, 'I recommend checking out neighborhoods near the downtown area.','https://example.com/image1.jpg'),
-(2, 1, 'I found a great apartment using Zillow. You should give it a try!','https://example.com/image1.jpg'),
-(3, 2, 'Puedes buscar en sitios como Idealista o Fotocasa.','https://example.com/image1.jpg'),
-(4, 2, 'Si necesitas ayuda con la mudanza, puedo recomendarte una buena empresa.','https://example.com/image1.jpg'),
-(5, 3, 'Pour trouver une maison à louer, je vous conseille de chercher sur Leboncoin ou PAP.','https://example.com/image1.jpg');
+(1, 1, 'I recommend checking out neighborhoods near the downtown area.','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+(2, 1, 'I found a great apartment using Zillow. You should give it a try!','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+(3, 2, 'Puedes buscar en sitios como Idealista o Fotocasa.','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+(4, 2, 'Si necesitas ayuda con la mudanza, puedo recomendarte una buena empresa.','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+(5, 3, 'Pour trouver une maison à louer, je vous conseille de chercher sur Leboncoin ou PAP.','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image');
 
 INSERT INTO jobs(user_id, job_title, company, email, location, posted_date, job_type, description, native_language, is_favorite, skills, requirements, salary) VALUES 
 (1, 'Web Developer', 'Acme Inc.', 'jobs@acmeinc.com', 'New York, NY', '2022-05-10 12:00:00', 'Full-Time', 'We are seeking an experienced web developer to join our team. The ideal candidate should have experience with HTML, CSS, JavaScript, and React.', 'English', FALSE, 'Full-stack web developer', 'none', 45.00),
