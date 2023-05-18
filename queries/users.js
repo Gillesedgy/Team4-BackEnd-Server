@@ -1,4 +1,4 @@
-const db = require("../db/dbConfig")
+const db = require("../db/dbConfig");
 
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
@@ -33,8 +33,8 @@ const loginUser = async (user) => {
       const foundUser = await bcrypt.compare(password, oneUser.password);
 
       if (foundUser) {
-        const { username } = oneUser;
-        return { username };
+        const { username, id } = oneUser;
+        return { username, id };
       }
     }
   } catch (err) {
@@ -57,7 +57,7 @@ const userListings = async (id) => {
       "SELECT * FROM users INNER JOIN listings ON users.id = listings.user_id WHERE users.id=$1",
       id
     );
-   
+
     return listings;
   } catch (err) {
     return err;
@@ -78,8 +78,8 @@ const userDiscussion = async (id) => {
 
 const userJob = async (id) => {
   try {
-    const job = await db.one(
-      "SELECT * FROM users INNER JOIN jobs ON users.id = jobs.user_id WHERE users.id=$1",
+    const job = await db.any(
+      "SELECT * FROM jobs INNER JOIN users ON jobs.user_id = users.id WHERE jobs.user_id=$1",
       id
     );
     return job;
@@ -88,5 +88,35 @@ const userJob = async (id) => {
   }
 };
 
-module.exports = { signUpUser, loginUser, userProfile, userListings,userDiscussion, userJob };
+const createJob = async (job) => {
+  try {
+    const newJob = await db.one(
+      "INSERT INTO jobs (job_title, user_id, company, email, location, job_type, description, native_language, is_favorite) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
+      [
+        job.job_title,
+        job.user_id,
+        job.company,
+        job.email,
+        job.location,
+        job.job_type,
+        job.description,
+        job.native_language,
+        job.is_favorite,
+      ]
+    );
+    return newJob;
+  } catch (err) {
+    return err;
+  }
+};
 
+module.exports = {
+  signUpUser,
+  loginUser,
+  userProfile,
+  userListings,
+  userDiscussion,
+  userJob,
+
+  createJob
+};

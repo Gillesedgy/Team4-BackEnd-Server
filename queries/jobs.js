@@ -73,6 +73,7 @@ const updateJob = async (id, job) => {
         job.is_favorite,
       ]
     );
+    return updatedJob
   } catch (err) {
     return err;
   }

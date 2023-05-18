@@ -12,7 +12,8 @@ const {
   userListings,
   userDiscussion,
   userJob,
-} = require("../queries/users")
+  createJob,
+} = require("../queries/users");
 
 // sign up
 
@@ -20,8 +21,10 @@ users.post("/signup", validInfo, async (req, res) => {
   try {
     const user = await signUpUser(req.body)
 
-    const { username } = user
-    res.status(200).json({ username })
+    const { username } = user;
+    const token = jwtGenerator(user.id);
+    //res.json({ token });
+    res.status(200).json({ username, token: token });
   } catch (err) {
     return err
   }
@@ -31,10 +34,11 @@ users.post("/signup", validInfo, async (req, res) => {
 
 users.post("/login", validInfo, async (req, res) => {
   try {
-    const user = await loginUser(req.body)
-    const { username } = user
+    const user = await loginUser(req.body);
+    const { username, id } = user;
     if (username) {
-      res.status(200).json({ message: "login successful", username })
+      const token = jwtGenerator(user.id);
+      res.status(200).json({ id, username, token, message: "login successful", });
     } else {
       res.status(200).json({ message: "user not found" })
     }
@@ -45,7 +49,7 @@ users.post("/login", validInfo, async (req, res) => {
 
 // get user profile
 
-users.get("/profile/:id", async (req, res) => {
+users.get("/profile/:id", authorization, async (req, res) => {
   try {
     const { id } = req.params
 
@@ -54,9 +58,6 @@ users.get("/profile/:id", async (req, res) => {
     if (!user.id) {
       res.json({ message: "no user found" })
     }
-
-    // const token = jwtGenerator(user.id);
-    // res.json({ token });
 
     // destructure the user object
     const { username, email, address, native_language } = user
@@ -67,7 +68,7 @@ users.get("/profile/:id", async (req, res) => {
   }
 })
 
-users.get("/profile/listings/:id", async (req, res) => {
+users.get("/listings/:id", async (req, res) => {
   try {
     const { id } = req.params
 
@@ -82,27 +83,24 @@ users.get("/profile/listings/:id", async (req, res) => {
   }
 })
 
-users.get("/profile/jobs/:id", async (req, res) => {
+users.get("/jobs/:id", async (req, res) => {
   try {
     const { id } = req.params
 
-    const user = await userJob(id)
+    const user = await userJob(id);
+    console.log(user);
 
-    if (user.result.rowCount === 0) {
-      res.json({ message: "you have no job listings" })
+    if (!user) {
+      res.json({ message: "you have no job listings" });
     }
 
-    //const { username, job_title, company } =  user;
-    //console.log(user.result.rows)
-    //res.json({username, job_title, company})
-    res.json(user.result.rows)
-    //res.json(user);
+    res.json(user);
   } catch (err) {
-    return err
+    res.json(err);
   }
 })
 
-users.get("/profile/discussion/:id", async (req, res) => {
+users.get("/discussion/:id", async (req, res) => {
   try {
     const { id } = req.params
 
@@ -120,6 +118,15 @@ users.get("/profile/discussion/:id", async (req, res) => {
     return err
   }
 })
+
+users.post("/profile/jobs", authorization, async (req, res) => {
+  try {
+    const newJob = await createJob(req.body);
+    res.json(newJob);
+  } catch (err) {
+    console.error(err);
+  }
+});
 
 users.get("/verify", authorization, async (req, res) => {
   try {
