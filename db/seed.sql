@@ -64,10 +64,10 @@ INSERT INTO listings (user_id, description, native_language, image_url, date_pos
 
 INSERT INTO discussions_board (user_id, post_title, post_content, image_url, native_language) VALUES
 (1, 'Looking for a new recipe to try', 'Im tired of making the same meals all the time. Does anyone have a favorite recipe they like to share?', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', 'English'),
-(2, 'Recomendaciones de libros', 'Me gustaría leer algo nuevo y emocionante. ¿Alguien tiene alguna recomendación de libros?', NULL, 'Spanish'),
+(2, 'Recomendaciones de libros', 'Me gustaría leer algo nuevo y emocionante. ¿Alguien tiene alguna recomendación de libros?', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', 'Spanish'),
 (3, 'Conseils pour faire du yoga à la maison', 'Je suis nouveau dans le yoga et j aimerais en faire à la maison. Des conseils pour un débutant?', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', 'French'),
-(4, 'New hobby ideas', 'I need a new hobby to fill my free time. What are some hobbies that you enjoy?', NULL, 'English'),
-(5, 'Sugerencias de películas', 'Me encanta ver películas en mi tiempo libre. ¿Alguien tiene alguna sugerencia de películas para ver?', NULL, 'Spanish');
+(4, 'New hobby ideas', 'I need a new hobby to fill my free time. What are some hobbies that you enjoy?', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', 'English'),
+(5, 'Sugerencias de películas', 'Me encanta ver películas en mi tiempo libre. ¿Alguien tiene alguna sugerencia de películas para ver?', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', 'Spanish');
 
 INSERT INTO comments (user_id, discussions_id, comment_body,image_url) VALUES
 (1, 1, 'I recommend checking out neighborhoods near the downtown area.','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
