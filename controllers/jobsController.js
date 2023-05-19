@@ -30,7 +30,7 @@ jobsRouter.get("/", async (req, res) => {
     const newJob = await createJob(req.body);
     newJob.id
       ? res.status(200).json(newJob)
-      : res.status(500).json({ error: "" });
+      : res.status(500).json({ error: newJob, "error" });
   });
   
   jobsRouter.delete("/:id", async (req, res) => {
