@@ -34,9 +34,9 @@ jobsRouter.post("/", async (req, res) => {
 
 jobsRouter.delete("/:id", async (req, res) => {
   const { id } = req.params
-  const deleteJob = await deleteJob(id)
-  deleteJob.id
-    ? res.status(200).json({ deleteJob })
+  const deletedJob = await deleteJob(id)
+  deletedJob.id
+    ? res.status(200).json({ deletedJob })
     : res.status(404).json({ error: "id not found!" })
 })
 
