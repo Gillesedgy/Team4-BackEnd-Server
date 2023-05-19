@@ -37,7 +37,7 @@ const getAllListingsById = async (user_id) => {
 const addListing = async (listing) => {
   try {
     const newListing = await db.one(
-      "INSERT INTO listings(user_id, description, native_language, image_url, date_posted, price, longitude, latitude, is_applied, category_id, is_favorite, title, company) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING*",
+      "INSERT INTO listings(user_id, description, native_language, image_url, date_posted, price, location, is_applied, category_id, is_favorite, title, company) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING*",
       [
         listing.user_id,
         listing.description,
@@ -45,8 +45,7 @@ const addListing = async (listing) => {
         listing.image_url,
         listing.date_posted,
         listing.price,
-        listing.longitude,
-        listing.latitude,
+        listing.location,
         listing.is_applied,
         listing.category_id,
         listing.is_favorite,
@@ -77,7 +76,7 @@ const deleteListing = async (id) => {
 const updateListing = async (id, listing) => {
   try {
     const updatedListing = await db.one(
-      "UPDATE listings SET user_id=$1, description=$2, native_language=$3, image_url=$4, date_posted=$5, price=$6, longitude=$7, latitude=$8, is_applied=$9, category_id=$10, is_favorite=$11, title=$12, company=$13 WHERE id=$14 RETURNING *",
+      "UPDATE listings SET user_id=$1, description=$2, native_language=$3, image_url=$4, date_posted=$5, price=$6, location=$7, is_applied=$8, category_id=$9, is_favorite=$10, title=$11, company=$12 WHERE id=$13 RETURNING *",
       [
         listing.user_id,
         listing.description,
@@ -85,8 +84,7 @@ const updateListing = async (id, listing) => {
         listing.image_url,
         listing.date_posted,
         listing.price,
-        listing.longitude,
-        listing.latitude,
+        listing.location,
         listing.is_applied,
         listing.category_id,
         listing.is_favorite,
