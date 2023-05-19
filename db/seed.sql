@@ -13,7 +13,7 @@ INSERT INTO users (username, email, password, address, native_language, image_ur
 ('Nikesh', 'nikesh11@gmail.com', 'myword1nik23', '228 Linden blvd, Queens, NY', 'French','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
 ('Lennie', 'lennie12@gmail.com', 'passlen123', '127 east 45 street, brooklyn, NY', 'Spanish','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
 ('JD', 'jd23@gmail.com', 'jdworld30', '100 east 77st , Manhattan, NY', 'French','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('Carlos', 'carlos47@gmail.com', 'carlopass123', '777 Broad, brooklyn, NY', 'English','{https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('Carlos', 'carlos47@gmail.com', 'carlopass123', '777 Broad, brooklyn, NY', 'English','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
 ('Destiny', 'destiny@gmail.com', 'destiny30', '140 President street, Brooklyn, NY', 'Spanish','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
 ('jacksonjim', 'jacksonjim@gmail.com', 'jacksonhouse30', '222 Weller lane, Queens, NY', 'English','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
 ('Triane', 'tritri12@gmail.com', 'trigirl', '888 Broadway, Queens, NY', 'English','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
@@ -41,7 +41,7 @@ INSERT INTO categories (name) VALUES
 INSERT INTO listings (user_id, description, native_language, image_url, date_posted, price, longitude, latitude, is_applied, is_favorite, title, company, rooms) VALUES 
 (1, 'Beautiful 2-bedroom apartment for rent. A five minute walk to the nearest train station. pet friendly ', 'English', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', '2023-05-01', 2000.00, -73.9857, 40.7484, false, false, 'Spacious Apartment', 'ABC Realty', 2),
 (2, 'Hermosa casa en alquiler en el centro de la ciudad', 'Spanish', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', '2022-02-15', 1500.00, -73.9876, 40.7452, false, false, 'Casa Grande', 'DEF Realty', 3),
-(3, 'Un bel appartement de 3 chambres avec 1 salle de bain avec laveuse et secheuse. ll est situe pres de la communaute pour les courses.', 'French', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image}', '2022-03-22', 2500.00, -73.9825, 40.7525, false, false, 'Maison de Luxe', 'GHI Realty', 3),
+(3, 'Un bel appartement de 3 chambres avec 1 salle de bain avec laveuse et secheuse. ll est situe pres de la communaute pour les courses.', 'French', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', '2022-03-22', 2500.00, -73.9825, 40.7525, false, false, 'Maison de Luxe', 'GHI Realty', 3),
 (4, 'Cozy studio apartment with a eat in kitchen near downtown looking over the bridge. There is washer and dryer in the build. Transport is 2 blocks away.', 'English', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', '2022-04-30', 1000.00, -73.9802, 40.7489, false, false, 'Studio Apartment', 'JKL Realty', 0),
 (5, '漂亮的2居室公寓出租', 'Chinese', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', '2022-05-15', 3000.00, -73.9781, 40.7501, false, false, '豪华公寓', 'MNO Realty',3),
 (6, 'Affordable studio apartment with terrace and full kitchen in the Bronx. location is near yankees station. easy access to public transportation ', 'English', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', '2023-05-01', 1000.00, -73.9127, 40.8339,FALSE, FALSE, 'Studio apartment in the Bronx', NULL, 1),
