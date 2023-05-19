@@ -12,7 +12,7 @@ CREATE TABLE users(
     password VARCHAR(250) NOT NULL,
     address TEXT NOT NULL,
     native_language VARCHAR(50) NOT NULL,
-    image_url TEXT DEFAULT 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'
+    image_url TEXT [] DEFAULT '{}'
 );
 
 DROP TABLE IF EXISTS categories;
@@ -31,7 +31,7 @@ CREATE TABLE listings(
     user_id INTEGER REFERENCES users(id),
     description TEXT NOT NULL,
     native_language VARCHAR(50) NOT NULL,
-    image_url TEXT DEFAULT 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image',
+    image_url TEXT [] DEFAULT '{}',
     date_posted DATE NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     longitude DECIMAL (10, 6) NOT NULL,
@@ -50,7 +50,7 @@ CREATE TABLE discussions_board(
     user_id INTEGER REFERENCES users(id),
     post_title VARCHAR(250) NOT NULL,
     post_content TEXT NOT NULL,
-    image_url TEXT DEFAULT 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image',
+    image_url TEXT [] DEFAULT '{}',
     created_at TIMESTAMP DEFAULT NOW(),
     updated_at TIMESTAMP DEFAULT NOW(),
     native_language VARCHAR(50) NOT NULL
@@ -64,7 +64,7 @@ CREATE TABLE comments(
  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
  discussions_id INTEGER REFERENCES discussions_board(id) ON DELETE CASCADE,
  comment_body TEXT,
- image_url TEXT DEFAULT 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'
+ image_url TEXT [] DEFAULT '{}'
 );
 
 DROP TABLE IF EXISTS jobs;
