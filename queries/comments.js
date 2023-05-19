@@ -25,7 +25,7 @@ async function getCommentById(id) {
 async function createComments(comment) {
   try {
     const newComment = await db.one(
-      "INSERT INTO comments (user_id, discussion_id, comment_body) VALUES ($1, $2, $3) RETURNING *",
+      "INSERT INTO comments (user_id, community_board_id, comment_body) VALUES ($1, $2, $3) RETURNING *",
       [comment.user_id, comment.discussion_id, comment.comment_body]
     )
     return newComment
@@ -37,7 +37,7 @@ async function createComments(comment) {
 async function updateComment(id, comment) {
   try {
     const updatedComment = await db.one(
-      "UPDATE comments SET user_id=$1, discussion_id=$2, comment_body=$3 WHERE id=$4 RETURNING *",
+      "UPDATE comments SET user_id=$1, community_board_id=$2, comment_body=$3 WHERE id=$4 RETURNING *",
       [comment.user_id, comment.discussion_id, comment.comment_body, id]
     )
     return updatedComment

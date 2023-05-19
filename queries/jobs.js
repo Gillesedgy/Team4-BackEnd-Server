@@ -25,7 +25,7 @@ const getJob = async (id) => {
 const createJob = async (job) => {
   try {
     const newJob = await db.one(
-      "INSERT INTO jobs (job_title, company, email, location, job_type, description, native_language, is_favorite, skills, requirements, salary, requirements, salary) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10 ,$11) RETURNING *",
+      "INSERT INTO jobs (job_title, company, email, location, job_type, description, native_language, is_favorite, skills, requirements, salary) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10 ,$11) RETURNING *",
       [
         job.job_title,
         job.company,
@@ -46,19 +46,7 @@ const createJob = async (job) => {
   }
 }
 
-// DELETE JOB
-const deleteJob = async (id) => {
-  try {
-    const deletedJob = await db.one(
-      "DELETE FROM jobs WHERE id=$1 RETURNING *",
-      id
-    )
 
-    return deletedJob
-  } catch (err) {
-    return err
-  }
-}
 
 // UPDATE
 const updateJob = async (id, job) => {
@@ -81,6 +69,20 @@ const updateJob = async (id, job) => {
       ]
     )
     return updatedJob
+  } catch (err) {
+    return err
+  }
+}
+
+// DELETE JOB
+const deleteJob = async (id) => {
+  try {
+    const deletedJob = await db.one(
+      "DELETE FROM jobs WHERE id=$1 RETURNING *",
+      id
+    )
+
+    return deletedJob
   } catch (err) {
     return err
   }

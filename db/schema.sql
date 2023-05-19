@@ -42,9 +42,9 @@ CREATE TABLE listings(
     rooms INTEGER 
 );
 
-DROP TABLE IF EXISTS discussions_board;
+DROP TABLE IF EXISTS community_board;
 
-CREATE TABLE discussions_board(
+CREATE TABLE community_board(
     id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users(id),
     post_title VARCHAR(250) NOT NULL,
@@ -61,7 +61,7 @@ DROP TABLE IF EXISTS comments;
 CREATE TABLE comments(
  id SERIAL PRIMARY KEY,
  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
- discussions_id INTEGER REFERENCES discussions_board(id) ON DELETE CASCADE,
+ community_board_id INTEGER REFERENCES community_board(id) ON DELETE CASCADE,
  comment_body TEXT,
  image_url TEXT [] DEFAULT '{}'
 );

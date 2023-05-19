@@ -67,7 +67,7 @@ const userListings = async (id) => {
 const userDiscussion = async (id) => {
   try {
     const discussion = await db.one(
-      "SELECT * FROM users INNER JOIN discussions_board ON users.id = discussions_board.user_id WHERE users.id=$1",
+      "SELECT * FROM users INNER JOIN community_board_id ON users.id = community_board_id.user_id WHERE users.id=$1",
       id
     );
     return discussion;
