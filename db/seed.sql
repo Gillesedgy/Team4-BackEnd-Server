@@ -61,14 +61,14 @@ INSERT INTO listings (user_id, description, native_language, image_url, date_pos
 (20, 'Günstige Zweizimmerwohnung in Staten Island für einkommensschwache Familien. Enthält einen Hinterhof und eine Garage.', 'German', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', '2023-05-16', 1800.00, '2 N. Boston Court Staten Island, NY 10312', FALSE, FALSE,'Dreizimmerwohnung in Staten Island.', NULL, 2);
 
 
-INSERT INTO discussions_board (user_id, post_title, post_content, image_url, native_language) VALUES
+INSERT INTO community_board (user_id, post_title, post_content, image_url, native_language) VALUES
 (1, 'Looking for a new recipe to try', 'Im tired of making the same meals all the time. Does anyone have a favorite recipe they like to share?', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', 'English'),
 (2, 'Recomendaciones de libros', 'Me gustaría leer algo nuevo y emocionante. ¿Alguien tiene alguna recomendación de libros?', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', 'Spanish'),
 (3, 'Conseils pour faire du yoga à la maison', 'Je suis nouveau dans le yoga et j aimerais en faire à la maison. Des conseils pour un débutant?', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', 'French'),
 (4, 'New hobby ideas', 'I need a new hobby to fill my free time. What are some hobbies that you enjoy?', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', 'English'),
 (5, 'Sugerencias de películas', 'Me encanta ver películas en mi tiempo libre. ¿Alguien tiene alguna sugerencia de películas para ver?', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', 'Spanish');
 
-INSERT INTO comments (user_id, discussions_id, comment_body,image_url) VALUES
+INSERT INTO comments (user_id, community_board_id, comment_body,image_url) VALUES
 (1, 1, 'I recommend checking out neighborhoods near the downtown area.','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
 (2, 1, 'I found a great apartment using Zillow. You should give it a try!','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
 (3, 2, 'Puedes buscar en sitios como Idealista o Fotocasa.','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),

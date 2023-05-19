@@ -39,7 +39,7 @@ router.post("/", async (req, res) => {
 })
 
 // Update
-router.put("/", async (req, res) => {
+router.put("/:id", async (req, res) => {
   const { id } = req.params
   const updatedComment = await updateComment(id, req.body)
   updatedComment.id
