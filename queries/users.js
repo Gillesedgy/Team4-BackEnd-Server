@@ -24,7 +24,7 @@ const signUpUser = async (user) => {
 };
 
 const loginUser = async (user) => {
-  const { password, username } = user;
+  const { username, password } = user;
   try {
     const oneUser = await db.one("SELECT * FROM users WHERE username=$1", [
       username,
@@ -118,5 +118,5 @@ module.exports = {
   userDiscussion,
   userJob,
 
-  createJob
+  createJob,
 };
