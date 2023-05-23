@@ -1,4 +1,5 @@
 const express = require("express");
+const authorization = require("../middleware/authorization");
 
 const router = express.Router({ mergeParams: true });
 const {
@@ -30,8 +31,9 @@ router.get("/:id", async (req, res) => {
 });
 // another show function for users group of listings
 // CREATE
-router.post("/", async (req, res) => {
-  const newlisting = await addListing(req.body);
+router.post("/", authorization, async (req, res) => {
+  const { userId } = req
+  const newlisting = await addListing({ ...req.body, userId });
   newlisting
     ? res.status(200).json(newlisting)
     : res.status(500).json({ error: "" });

@@ -39,7 +39,7 @@ const addListing = async (listing) => {
     const newListing = await db.one(
       "INSERT INTO listings(user_id, description, native_language, image_url, date_posted, price, location, is_applied, is_favorite, title, company, rooms) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING*",
       [
-        listing.user_id,
+        listing.userId,
         listing.description,
         listing.native_language,
         listing.image_url,

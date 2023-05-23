@@ -52,11 +52,11 @@ users.post("/login", validInfo, async (req, res) => {
 
 // get user profile
 
-users.get("/profile/:id", authorization, async (req, res) => {
+users.get("/profile", authorization, async (req, res) => {
   try {
-    const { id } = req.params;
+    const { userId } = req;
 
-    const user = await userProfile(id);
+    const user = await userProfile(userId);
 
     if (!user.id) {
       res.json({ message: "no user found" });

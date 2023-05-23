@@ -1,4 +1,5 @@
 const express = require("express");
+const authorization = require("../middleware/authorization");
 
 const router = express.Router({ mergeParams: true });
 
@@ -10,11 +11,19 @@ const {
   updateJob,
 } = require("../queries/jobs");
 
+const { userJob } = require("../queries/users")
+
 router.get("/", async (req, res) => {
   const allJobs = await getAllJobs();
   allJobs[0]
     ? res.status(200).json(allJobs)
     : res.status(500).json({ error: "server error" });
+});
+
+router.get("/user", authorization, async (req, res) => {
+  const { userId } = req
+  const usersJobs = await userJob(userId)
+  res.status(200).json(usersJobs)
 });
 
 router.get("/:id", async (req, res) => {
@@ -25,8 +34,10 @@ router.get("/:id", async (req, res) => {
     : res.status(404).json({ error: "Job not Found!" });
 });
 
-router.post("/", async (req, res) => {
-  const newJob = await createJob(req.body);
+router.post("/", authorization, async (req, res) => {
+  const { userId } = req
+
+  const newJob = await createJob({...req.body, userId});
   newJob
     ? res.status(200).json(newJob)
     : res.status(500).json({ error: "error" });

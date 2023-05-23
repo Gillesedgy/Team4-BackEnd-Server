@@ -25,7 +25,7 @@ const getJob = async (id) => {
 const createJob = async (job) => {
   try {
     const newJob = await db.one(
-      "INSERT INTO jobs (job_title, company, email, location, job_type, description, native_language, is_favorite, skills, requirements, salary) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10 ,$11) RETURNING *",
+      "INSERT INTO jobs (job_title, company, email, location, job_type, description, native_language, is_favorite, skills, requirements, salary, user_id) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10 ,$11, $12) RETURNING *",
       [
         job.job_title,
         job.company,
@@ -37,7 +37,8 @@ const createJob = async (job) => {
         job.is_favorite,
         job.skills,
         job.requirements,
-        job.salary
+        job.salary,
+        job.userId
       ]
     )
     return newJob
@@ -45,8 +46,6 @@ const createJob = async (job) => {
     return err
   }
 }
-
-
 
 // UPDATE
 const updateJob = async (id, job) => {

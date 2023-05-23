@@ -44,7 +44,7 @@ const loginUser = async (user) => {
 
 const userProfile = async (id) => {
   try {
-    const user = await db.one("SELECT * FROM users WHERE id=$1", id);
+    const user = await db.one("SELECT * FROM users WHERE id=$1", [id]);
     return user;
   } catch (err) {
     return err;
@@ -78,11 +78,11 @@ const userDiscussion = async (id) => {
 
 const userJob = async (id) => {
   try {
-    const job = await db.any(
-      "SELECT * FROM jobs INNER JOIN users ON jobs.user_id = users.id WHERE jobs.user_id=$1",
+    const jobs = await db.any(
+      "SELECT user_id, jobs.id, job_title, company, jobs.email, location, job_type, description, jobs.native_language, is_favorite  FROM jobs INNER JOIN users ON jobs.user_id = users.id WHERE jobs.user_id=$1",
       id
     );
-    return job;
+    return jobs;
   } catch (err) {
     return err;
   }
