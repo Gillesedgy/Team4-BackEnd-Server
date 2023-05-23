@@ -32,8 +32,15 @@ router.get("/:id", async (req, res) => {
 // another show function for users group of listings
 // CREATE
 router.post("/", authorization, async (req, res) => {
-  const { userId } = req
-  const newlisting = await addListing({ ...req.body, userId });
+  const { userId } = req;
+
+  const newlisting = await addListing({
+    ...req.body,
+    userId,
+    image_url:
+      req.body.image_url ||
+      "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image",
+  });
   newlisting
     ? res.status(200).json(newlisting)
     : res.status(500).json({ error: "" });
