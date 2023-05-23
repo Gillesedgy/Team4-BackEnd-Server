@@ -12,7 +12,7 @@ CREATE TABLE users(
     password VARCHAR(250) NOT NULL,
     address TEXT NOT NULL,
     native_language VARCHAR(50) NOT NULL,
-    image_url TEXT [] DEFAULT '{}'
+    image_url TEXT
 );
 
 DROP TABLE IF EXISTS categories;
@@ -31,7 +31,7 @@ CREATE TABLE listings(
     user_id INTEGER REFERENCES users(id),
     description TEXT NOT NULL,
     native_language VARCHAR(50) NOT NULL,
-    image_url TEXT [] DEFAULT '{}',
+    image_url TEXT,
     date_posted DATE NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     location VARCHAR(250) NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE community_board(
     user_id INTEGER REFERENCES users(id),
     post_title VARCHAR(250) NOT NULL,
     post_content TEXT NOT NULL,
-    image_url TEXT [] DEFAULT '{}',
+    image_url TEXT,
     created_at TIMESTAMP DEFAULT NOW(),
     updated_at TIMESTAMP DEFAULT NOW(),
     native_language VARCHAR(50) NOT NULL
@@ -63,7 +63,7 @@ CREATE TABLE comments(
  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
  community_board_id INTEGER REFERENCES community_board(id) ON DELETE CASCADE,
  comment_body TEXT,
- image_url TEXT [] DEFAULT '{}'
+ image_url TEXT
 );
 
 DROP TABLE IF EXISTS jobs;
