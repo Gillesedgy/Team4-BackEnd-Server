@@ -51,31 +51,6 @@ const userProfile = async (id) => {
   }
 };
 
-const userListings = async (id) => {
-  try {
-    const listings = await db.one(
-      "SELECT user_id, listings.id, description, listings.native_language, image_url, date_posted, price, location, is_applied, is_favorite,title, company, rooms FROM listings INNER JOIN users ON listings.user_id = users.id WHERE listings.user_id=$1",
-      id
-    );
-
-    return listings;
-  } catch (err) {
-    return err;
-  }
-};
-
-const userDiscussion = async (id) => {
-  try {
-    const discussion = await db.one(
-      "SELECT * FROM users INNER JOIN community_board_id ON users.id = community_board_id.user_id WHERE users.id=$1",
-      id
-    );
-    return discussion;
-  } catch (err) {
-    return err;
-  }
-};
-
 const userJob = async (id) => {
   try {
     const jobs = await db.any(
@@ -88,27 +63,29 @@ const userJob = async (id) => {
   }
 };
 
-const createJob = async (job) => {
+const userListings = async (id) => {
   try {
-    const newJob = await db.one(
-      "INSERT INTO jobs (job_title, user_id, company, email, location, job_type, description, native_language, is_favorite) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
-      [
-        job.job_title,
-        job.user_id,
-        job.company,
-        job.email,
-        job.location,
-        job.job_type,
-        job.description,
-        job.native_language,
-        job.is_favorite,
-      ]
-    );
-    return newJob;
+    const listings = await db.any("SELECT user_id, listings.id, description, listings.native_language, listings.image_url, date_posted, price, location, is_applied, is_favorite, title, company, rooms FROM listings INNER JOIN users ON listings.user_id = users.id WHERE listings.user_id=$1",id);
+
+    return listings;
   } catch (err) {
     return err;
   }
 };
+
+const userDiscussion = async (id) => {
+  try {
+    const discussion = await db.one(
+      "SELECT * FROM  community_board INNER JOIN users ON community_board.users_id = users.id WHERE community_board.users_id=$1",
+      id
+    );
+    return discussion;
+  } catch (err) {
+    return err;
+  }
+};
+
+
 
 module.exports = {
   signUpUser,
@@ -117,6 +94,4 @@ module.exports = {
   userListings,
   userDiscussion,
   userJob,
-
-  createJob,
 };

@@ -40,9 +40,9 @@ const getAllListingsById = async (user_id) => {
 const addListing = async (listing) => {
   try {
     const newListing = await db.one(
-      "INSERT INTO listings(user_id, description, native_language, image_url, date_posted, price, location, is_applied, is_favorite, title, company, rooms) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING*",
+      "INSERT INTO listings(description, native_language, image_url, date_posted, price, location, is_applied, is_favorite, title, company, rooms, user_id) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING*",
       [
-        listing.userId,
+        
         listing.description,
         listing.native_language,
         listing.image_url,
@@ -54,6 +54,7 @@ const addListing = async (listing) => {
         listing.title,
         listing.company,
         listing.rooms,
+        listing.userId
       ]
     );
     return newListing;

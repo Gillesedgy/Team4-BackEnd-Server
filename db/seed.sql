@@ -23,20 +23,21 @@ INSERT INTO users (username, email, password, address, native_language, image_ur
 ('Johannes Bauer', 'jim@gmail.com', 'jBauer1230', '180 Fremont Ave, Staten island, NY', 'German','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image');
 
 
+INSERT INTO jobs(user_id, job_title, company, email, location, posted_date, job_type, description, native_language, is_favorite, skills, requirements, salary) VALUES 
+(1, 'Web Developer', 'Acme Inc.', 'jobs@acmeinc.com', 'New York, NY', '2022-05-10 12:00:00', 'Full-Time', 'We are seeking an experienced web developer to join our team. The ideal candidate should have experience with HTML, CSS, JavaScript, and React.', 'English', FALSE, 'Full-stack web developer', 'none', 45.00),
+(2, 'Software Engineer', 'Tech Solutions', 'jobs@techsolutions.com', 'Seattle, WA', '2022-05-09 14:15:00', 'Full-Time', 'We are seeking a talented software engineer to develop and maintain our web application. The ideal candidate should have experience with Ruby on Rails and React.', 'English', FALSE, 'none', 'none', 75.000),
+(3, 'Graphic Designer', 'Design Co.', 'jobs@designco.com', 'Long island, NY', '2022-05-10 10:00:00', 'Part-Time', 'We are looking for a creative and detail-oriented graphic designer to join our team. The ideal candidate should have experience with Adobe Creative Suite and branding design.', 'English', FALSE,'Full-stack','windows knowledge',60.000),
+(4, 'Customer Service Representative', 'XYZ Corporation', 'jobs@xyzcorp.com', 'Queens, NY', '2022-05-09 11:45:00', 'Full-Time', 'We are looking for a friendly and customer-focused representative to handle inquiries and provide support to our clients. The ideal candidate should have excellent communication and problem-solving skills.', 'English', FALSE, 'Communication skills, Customer service skills', 'High school diploma or equivalent', 16.00),
+(5, 'Sales Representative', 'Sales Co.', 'jobs@salesco.com', 'New York, NY', '2022-05-10 13:30:00', 'Full-Time', 'We are looking for a motivated and results-driven sales representative to sell our products and services. The ideal candidate should have with sales and lead generation.', 'English', FALSE,' Customer service skills','two years experience', 35.000),
+(6, 'Server', 'The Cheesecake Factory', 'server@cheesecakefactory.com', 'New York City', '2023-05-16 02:39:50', 'Part-time', 'Serving food and drinks to customers', 'English', false, 'Communication skills, Customer service skills', 'High school diploma or equivalent', 10.00),
+(7, 'Cashier', 'Walmart', 'cashier@walmart.com', 'Brooklyn', '2023-05-16 02:39:50', 'Full-time', 'Handling cash and credit card transactions at the register', 'English', false, 'Math skills, Customer service skills', 'High school diploma or equivalent', 12.00),
+(8, 'Janitorial Staff', 'NYC Department of Education', 'janitor@nycdoe.com', 'Queens', '2023-05-16 02:39:50', 'Full-time', 'Cleaning classrooms and common areas in schools', 'English and Spanish', false, 'none', 'none', 15.00),
+(9, 'Delivery Driver', 'Dominos Pizza', 'driver@dominos.com', 'Bronx', '2023-05-16 02:39:50', 'Part-time', 'Delivering pizzas to customers homes', 'English', false, 'Drivers license', 'none', 9.00),
+(10, 'Sales Associate', 'Macys', 'sales@macys.com', 'Staten Island', '2023-05-16 02:39:50', 'Full-time', 'Assisting customers with purchases and returns', 'English and Mandarin Chinese', false, 'none', 'none', 11.00),
+(11, 'Housekeeper', 'Clean Sweep Services', 'careers@cleansweepservices.com', 'Brooklyn, NY', '2023-04-28 12:00:00','Part-time', 'Clean Sweep Services is hiring a part-time housekeeper to clean homes and apartments in the Brooklyn area. The ideal candidate will be reliable, thorough, and able to work independently.','Spanish',true,'Cleaning, Organization, Time Management','High school diploma or equivalent, Previous experience in housekeeping',20.00),
+(12, 'Head Housekeeper', 'Riverfront Inn', 'hr@riverfrontinn.com', 'Albany, NY', '2023-05-05 10:00:00', 'Full-time', 'Riverfront Inn is seeking a head housekeeper to manage our housekeeping team and ensure that our guest rooms are always clean and well-stocked. The ideal candidate will have previous hotel housekeeping experience and strong leadership skills.','English' ,false,'Housekeeping, Leadership, Time Management', 'High school diploma or equivalent, Previous experience in hotel housekeeping, Supervisory experience', 60000.00),
+(13, 'Taxi Dispatcher', 'Green Cab', 'dispatcher@greencab.com', 'New York City', '2022-05-02 10:00:00', 'Part-time','Dispatch taxi drivers to their pickup locations', 'English', true, 'Communication, Multitasking', 'Experience in dispatching or customer service',25000.00);
 
-INSERT INTO categories (name) VALUES
-('Apartments'),
-('Events'),
-('Furniture'),
-('Homes'),
-('Food'),
-('Casas'),
-('Housing'),
-('Language'),
-('Other'),
-('Activities'),
-('Jobs'),
-('Rentals');
 
 INSERT INTO listings (user_id, description, native_language, image_url, date_posted, price, location, is_applied, is_favorite, title, company, rooms) VALUES 
 (1, 'Beautiful 2-bedroom apartment for rent. A five minute walk to the nearest train station. pet friendly ', 'English', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', '2023-05-01', 2000.00 ,'261 Rocky River st. Brooklyn NY 11211',  false, false, 'Spacious Apartment', 'ABC Realty', 2),
@@ -75,17 +76,17 @@ INSERT INTO comments (user_id, community_board_id, comment_body,image_url) VALUE
 (4, 2, 'Si necesitas ayuda con la mudanza, puedo recomendarte una buena empresa.','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
 (5, 3, 'Pour trouver une maison à louer, je vous conseille de chercher sur Leboncoin ou PAP.','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image');
 
-INSERT INTO jobs(user_id, job_title, company, email, location, posted_date, job_type, description, native_language, is_favorite, skills, requirements, salary) VALUES 
-(1, 'Web Developer', 'Acme Inc.', 'jobs@acmeinc.com', 'New York, NY', '2022-05-10 12:00:00', 'Full-Time', 'We are seeking an experienced web developer to join our team. The ideal candidate should have experience with HTML, CSS, JavaScript, and React.', 'English', FALSE, 'Full-stack web developer', 'none', 45.00),
-(2, 'Software Engineer', 'Tech Solutions', 'jobs@techsolutions.com', 'Seattle, WA', '2022-05-09 14:15:00', 'Full-Time', 'We are seeking a talented software engineer to develop and maintain our web application. The ideal candidate should have experience with Ruby on Rails and React.', 'English', FALSE, 'none', 'none', 75.000),
-(3, 'Graphic Designer', 'Design Co.', 'jobs@designco.com', 'Long island, NY', '2022-05-10 10:00:00', 'Part-Time', 'We are looking for a creative and detail-oriented graphic designer to join our team. The ideal candidate should have experience with Adobe Creative Suite and branding design.', 'English', FALSE,'Full-stack','windows knowledge',60.000),
-(4, 'Customer Service Representative', 'XYZ Corporation', 'jobs@xyzcorp.com', 'Queens, NY', '2022-05-09 11:45:00', 'Full-Time', 'We are looking for a friendly and customer-focused representative to handle inquiries and provide support to our clients. The ideal candidate should have excellent communication and problem-solving skills.', 'English', FALSE, 'Communication skills, Customer service skills', 'High school diploma or equivalent', 16.00),
-(5, 'Sales Representative', 'Sales Co.', 'jobs@salesco.com', 'New York, NY', '2022-05-10 13:30:00', 'Full-Time', 'We are looking for a motivated and results-driven sales representative to sell our products and services. The ideal candidate should have with sales and lead generation.', 'English', FALSE,' Customer service skills','two years experience', 35.000),
-(6, 'Server', 'The Cheesecake Factory', 'server@cheesecakefactory.com', 'New York City', '2023-05-16 02:39:50', 'Part-time', 'Serving food and drinks to customers', 'English', false, 'Communication skills, Customer service skills', 'High school diploma or equivalent', 10.00),
-(7, 'Cashier', 'Walmart', 'cashier@walmart.com', 'Brooklyn', '2023-05-16 02:39:50', 'Full-time', 'Handling cash and credit card transactions at the register', 'English', false, 'Math skills, Customer service skills', 'High school diploma or equivalent', 12.00),
-(8, 'Janitorial Staff', 'NYC Department of Education', 'janitor@nycdoe.com', 'Queens', '2023-05-16 02:39:50', 'Full-time', 'Cleaning classrooms and common areas in schools', 'English and Spanish', false, 'none', 'none', 15.00),
-(9, 'Delivery Driver', 'Dominos Pizza', 'driver@dominos.com', 'Bronx', '2023-05-16 02:39:50', 'Part-time', 'Delivering pizzas to customers homes', 'English', false, 'Drivers license', 'none', 9.00),
-(10, 'Sales Associate', 'Macys', 'sales@macys.com', 'Staten Island', '2023-05-16 02:39:50', 'Full-time', 'Assisting customers with purchases and returns', 'English and Mandarin Chinese', false, 'none', 'none', 11.00),
-(11, 'Housekeeper', 'Clean Sweep Services', 'careers@cleansweepservices.com', 'Brooklyn, NY', '2023-04-28 12:00:00','Part-time', 'Clean Sweep Services is hiring a part-time housekeeper to clean homes and apartments in the Brooklyn area. The ideal candidate will be reliable, thorough, and able to work independently.','Spanish',true,'Cleaning, Organization, Time Management','High school diploma or equivalent, Previous experience in housekeeping',20.00),
-(12, 'Head Housekeeper', 'Riverfront Inn', 'hr@riverfrontinn.com', 'Albany, NY', '2023-05-05 10:00:00', 'Full-time', 'Riverfront Inn is seeking a head housekeeper to manage our housekeeping team and ensure that our guest rooms are always clean and well-stocked. The ideal candidate will have previous hotel housekeeping experience and strong leadership skills.','English' ,false,'Housekeeping, Leadership, Time Management', 'High school diploma or equivalent, Previous experience in hotel housekeeping, Supervisory experience', 60000.00),
-(13, 'Taxi Dispatcher', 'Green Cab', 'dispatcher@greencab.com', 'New York City', '2022-05-02 10:00:00', 'Part-time','Dispatch taxi drivers to their pickup locations', 'English', true, 'Communication, Multitasking', 'Experience in dispatching or customer service',25000.00);
+INSERT INTO categories (name) VALUES
+('Apartments'),
+('Events'),
+('Furniture'),
+('Homes'),
+('Food'),
+('Casas'),
+('Housing'),
+('Language'),
+('Other'),
+('Activities'),
+('Jobs'),
+('Rentals');
+
