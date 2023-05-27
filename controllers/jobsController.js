@@ -11,7 +11,7 @@ const {
   updateJob,
 } = require("../queries/jobs");
 
-const { userJob } = require("../queries/users")
+const { userJob } = require("../queries/users");
 
 router.get("/", async (req, res) => {
   const allJobs = await getAllJobs();
@@ -22,9 +22,9 @@ router.get("/", async (req, res) => {
 
 //get job posted by user
 router.get("/user", authorization, async (req, res) => {
-  const { userId } = req
-  const usersJobs = await userJob(userId)
-  res.status(200).json(usersJobs)
+  const { userId } = req;
+  const usersJobs = await userJob(userId);
+  res.status(200).json(usersJobs);
 });
 
 router.get("/:id", async (req, res) => {
@@ -36,35 +36,21 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", authorization, async (req, res) => {
-  const { userId } = req
+  const { userId } = req;
 
-  const newJob = await createJob({...req.body, userId});
+  const newJob = await createJob({ ...req.body, userId });
   newJob
     ? res.status(200).json(newJob)
     : res.status(500).json({ error: "error" });
 });
 
-
-
-
-
-
-
-router.put("/:id", async (req, res) => {
+router.put("/:id", authorization, async (req, res) => {
   const { id } = req.params;
   const updatedJob = await updateJob(id, req.body);
   updatedJob.id
     ? res.status(200).json(updatedJob)
     : res.status(500).json({ error: "Job not updated!" });
 });
-
-
-
-
-
-
-
-
 
 router.delete("/:id", authorization, async (req, res) => {
   const { id } = req.params;
