@@ -11,7 +11,7 @@ const {
   updateListing,
 } = require("../queries/listings");
 
-const { userListings } = require("../queries/users")
+const { userListings } = require("../queries/users");
 
 // INDEX
 router.get("/", async (req, res) => {
@@ -23,22 +23,26 @@ router.get("/", async (req, res) => {
         .json({ error: "An error has accured getting all the listings" });
 });
 
+// SHOW
+// router.get("/:id", async (req, res) => {
+//   const { id } = req.params;
+//   const oneListing = await getOneListings(id);
+//   !oneListing.message
+//     ? res.status(200).json(oneListing)
+//     : res.status(404).json({ error: "Listing not Found!" });
+// });
+
 //get listing posted by user
 router.get("/user", authorization, async (req, res) => {
   const { userId } = req;
   const userListing = await userListings(userId);
-  res.status(200).json(userListing);
+  if (!userListing.length) {
+    res.status(401).json({ message: "you have no listings" });
+  } else {
+    res.status(200).json(userListing);
+  }
 });
 
-// SHOW
-router.get("/:id", async (req, res) => {
-  const { id } = req.params;
-  const oneListing = await getOneListings(id);
-  !oneListing.message
-    ? res.status(200).json(oneListing)
-    : res.status(404).json({ error: "Listing not Found!" });
-});
-// another show function for users group of listings
 // CREATE
 router.post("/", authorization, async (req, res) => {
   const { userId } = req;

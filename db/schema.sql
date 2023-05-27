@@ -15,13 +15,24 @@ CREATE TABLE users(
     image_url TEXT
 );
 
-DROP TABLE IF EXISTS categories;
+DROP TABLE IF EXISTS jobs;
 
-CREATE TABLE categories(
- id SERIAL PRIMARY KEY,
- name VARCHAR(250) NOT NULL
+CREATE TABLE jobs(
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    job_title VARCHAR(250) NOT NULL,
+    company VARCHAR(250),
+    email VARCHAR(50) NOT NULL,
+    location VARCHAR(250) NOT NULL,
+    posted_date TIMESTAMP DEFAULT NOW(),
+    job_type VARCHAR(250) NOT NULL,
+    description TEXT NOT NULL,
+    native_language VARCHAR(50) NOT NULL,
+    is_favorite BOOLEAN DEFAULT FALSE,
+    skills TEXT, 
+    requirements TEXT,
+    salary DECIMAL(10, 2)
 );
-
 
 
 DROP TABLE IF EXISTS listings;
@@ -41,6 +52,7 @@ CREATE TABLE listings(
     company TEXT,
     rooms INTEGER 
 );
+
 
 DROP TABLE IF EXISTS community_board;
 
@@ -66,21 +78,11 @@ CREATE TABLE comments(
  image_url TEXT
 );
 
-DROP TABLE IF EXISTS jobs;
+DROP TABLE IF EXISTS categories;
 
-CREATE TABLE jobs(
-    id SERIAL PRIMARY KEY,
-    user_id INTEGER REFERENCES users(id),
-    job_title VARCHAR(250) NOT NULL,
-    company VARCHAR(250),
-    email VARCHAR(50) NOT NULL,
-    location VARCHAR(250) NOT NULL,
-    posted_date TIMESTAMP DEFAULT NOW(),
-    job_type VARCHAR(250) NOT NULL,
-    description TEXT NOT NULL,
-    native_language VARCHAR(50) NOT NULL,
-    is_favorite BOOLEAN DEFAULT FALSE,
-    skills TEXT, 
-    requirements TEXT,
-    salary DECIMAL(10, 2)
+CREATE TABLE categories(
+ id SERIAL PRIMARY KEY,
+ name VARCHAR(250) NOT NULL
 );
+
+
