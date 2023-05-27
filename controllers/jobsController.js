@@ -20,6 +20,7 @@ router.get("/", async (req, res) => {
     : res.status(500).json({ error: "server error" });
 });
 
+//get job posted by user
 router.get("/user", authorization, async (req, res) => {
   const { userId } = req
   const usersJobs = await userJob(userId)
@@ -43,20 +44,34 @@ router.post("/", authorization, async (req, res) => {
     : res.status(500).json({ error: "error" });
 });
 
+
+
+
+
+
+
 router.put("/:id", async (req, res) => {
   const { id } = req.params;
   const updatedJob = await updateJob(id, req.body);
   updatedJob.id
     ? res.status(200).json(updatedJob)
-    : res.status(500).json({ error: "Did not update job" });
+    : res.status(500).json({ error: "Job not updated!" });
 });
 
-router.delete("/:id", async (req, res) => {
+
+
+
+
+
+
+
+
+router.delete("/:id", authorization, async (req, res) => {
   const { id } = req.params;
-  const deletedJob = await deleteJob(id);
+  const deletedJob = await deleteJob(id, req.body);
   deletedJob.id
     ? res.status(200).json({ deletedJob })
-    : res.status(404).json({ error: "id not found!" });
+    : res.status(404).json({ error: "Job not Deleted!" });
 });
 
 module.exports = router;

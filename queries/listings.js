@@ -65,7 +65,7 @@ const updateListing = async (id, listing) => {
     const updatedListing = await db.one(
       "UPDATE listings SET user_id=$1, description=$2, native_language=$3, image_url=$4, date_posted=$5, price=$6, location=$7, is_applied=$8,  is_favorite=$9, title=$10, company=$11, rooms=$12 WHERE id=$13 RETURNING *",
       [
-        listing.user_id,
+        listing.userId,
         listing.description,
         listing.native_language,
         listing.image_url,

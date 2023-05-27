@@ -1,4 +1,5 @@
 const express = require("express");
+const authorization = require("../middleware/authorization");
 
 const router = express.Router({ mergeParams: true });
 
@@ -25,9 +26,10 @@ router.get("/:id", async (req, res) => {
     : res.status(404).json({ error: "Discussion not Found!" });
 });
 
-router.post("/", async (req, res) => {
-  const newDiscussion = await createDiscussion(req.body);
-  newDiscussion.id
+router.post("/",authorization, async (req, res) => {
+  const {userId} = req
+  const newDiscussion = await createDiscussion({...req.body, userId});
+  newDiscussion
     ? res.status(200).json(newDiscussion)
     : res.status(500).json({ error: "" });
 });

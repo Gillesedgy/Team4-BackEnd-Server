@@ -27,8 +27,9 @@ const getDiscussion = async (id) => {
 const createDiscussion = async (discussion) => {
   try {
     const newDiscussion = await db.one(
-      "INSERT INTO community_board (post_title, post_content, image_url, native_language) VALUES($1, $2, $3, $4) RETURNING *",
+      "INSERT INTO community_board (user_id, post_title, post_content, image_url, native_language) VALUES($1, $2, $3, $4, $5) RETURNING *",
       [
+        discussion.userId,
         discussion.post_title,
         discussion.post_content,
         discussion.image_url,

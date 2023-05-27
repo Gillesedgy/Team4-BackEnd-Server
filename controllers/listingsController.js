@@ -47,7 +47,7 @@ router.post("/", authorization, async (req, res) => {
 });
 
 // UPDATE
-router.put("/:id", async (req, res) => {
+router.put("/:id", authorization, async (req, res) => {
   const { id } = req.params;
   const updatedListing = await updateListing(id, req.body);
   updatedListing.id
