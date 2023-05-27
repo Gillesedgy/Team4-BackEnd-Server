@@ -24,13 +24,13 @@ router.get("/", async (req, res) => {
 });
 
 // SHOW
-// router.get("/:id", async (req, res) => {
-//   const { id } = req.params;
-//   const oneListing = await getOneListings(id);
-//   !oneListing.message
-//     ? res.status(200).json(oneListing)
-//     : res.status(404).json({ error: "Listing not Found!" });
-// });
+router.get("/:id", async (req, res) => {
+  const { id } = req.params;
+  const oneListing = await getOneListings(id);
+  !oneListing.message
+    ? res.status(200).json(oneListing)
+    : res.status(404).json({ error: "Listing not Found!" });
+});
 
 //get listing posted by user
 router.get("/user", authorization, async (req, res) => {
