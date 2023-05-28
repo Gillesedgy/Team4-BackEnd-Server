@@ -42,30 +42,18 @@ const createDiscussion = async (discussion) => {
   }
 };
 
-// DELETE DISCUSSION
-const deleteDiscussion = async (id) => {
-  try {
-    const deletedDiscussion = await db.one(
-      "DELETE FROM community_board WHERE id=$1 RETURNING *",
-      id
-    );
-    return deletedDiscussion;
-  } catch (error) {
-    return error;
-  }
-};
-
 // UPDATE DISSUSSION
-const updateDiscussion = async (id, discussion) => {
+const updateDiscussion = async (id, userId, discussion) => {
   try {
     const updatedDiscussion = await db.one(
-      "UPDATE community_board SET post_title=$1, post_content=$2, image_url=$3, native_language=$4 WHERE id=$5 RETURNING *",
+      "UPDATE community_board SET post_title=$1, post_content=$2, image_url=$3, native_language=$4 WHERE id=$5 AND user_id=$6 RETURNING *",
       [
         discussion.post_title,
         discussion.post_content,
         discussion.image_url,
         discussion.native_language,
         id,
+        userId
       ]
     );
     return updatedDiscussion;
@@ -73,6 +61,21 @@ const updateDiscussion = async (id, discussion) => {
     return error;
   }
 };
+
+// DELETE DISCUSSION
+const deleteDiscussion = async (id, userId) => {
+  try {
+    const deletedDiscussion = await db.one(
+      "DELETE FROM community_board WHERE id=$1 AND user_id=$2 RETURNING *",
+      [id, userId]
+    );
+    return deletedDiscussion;
+  } catch (error) {
+    return error;
+  }
+};
+
+
 
 module.exports = {
   getAllDiscussions,
