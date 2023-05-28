@@ -48,10 +48,10 @@ const createJob = async (job) => {
 }
 
 // UPDATE
-const updateJob = async (id, job) => {
+const updateJob = async (id, userId, job) => {
   try {
     const updatedJob = await db.one(
-      "UPDATE jobs SET job_title=$1, company=$2, email=$3, location=$4, job_type=$5, description=$6, native_language=$7, is_favorite=$8, skills=$9, requirements=$10, salary=$11 WHERE id=$12 RETURNING *",
+      "UPDATE jobs SET job_title=$1, company=$2, email=$3, location=$4, job_type=$5, description=$6, native_language=$7, is_favorite=$8, skills=$9, requirements=$10, salary=$11 WHERE id=$12 AND user_id=$13 RETURNING *",
       [
         job.job_title,
         job.company,
@@ -64,22 +64,26 @@ const updateJob = async (id, job) => {
         job.skills,
         job.requirements,
         job.salary,
-        id,
+        id,       
+        userId
+
       ]
-    )
-    return updatedJob
+    );
+    return updatedJob;
   } catch (err) {
-    return err
+    return err;
   }
-}
+};
+
+
 
 // DELETE JOB
-const deleteJob = async (id) => {
+const deleteJob = async (id, userId) => {
   try {
     const deletedJob = await db.one(
-      "DELETE FROM jobs WHERE id=$1 RETURNING *",
-      id
-    )
+      "DELETE FROM jobs WHERE id=$1 AND user_id=$2 RETURNING *",
+      [id, userId]
+    );
 
     return deletedJob
   } catch (err) {

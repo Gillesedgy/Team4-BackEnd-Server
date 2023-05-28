@@ -11,6 +11,7 @@ const {
   updateDiscussion,
 } = require("../queries/communityBoard");
 
+//INDEX
 router.get("/", async (req, res) => {
   const allDiscussions = await getAllDiscussions();
   allDiscussions[0]
@@ -18,6 +19,7 @@ router.get("/", async (req, res) => {
     : res.status(500).json({ error: "server error" });
 });
 
+//GET Community posting by ID
 router.get("/:id", async (req, res) => {
   const { id } = req.params;
   const oneDiscussion = await getDiscussion(id);
@@ -26,28 +28,37 @@ router.get("/:id", async (req, res) => {
     : res.status(404).json({ error: "Discussion not Found!" });
 });
 
-router.post("/",authorization, async (req, res) => {
+//CREATE
+router.post("/", authorization, async (req, res) => {
   const {userId} = req
+
   const newDiscussion = await createDiscussion({...req.body, userId});
   newDiscussion
     ? res.status(200).json(newDiscussion)
-    : res.status(500).json({ error: "" });
+    : res.status(500).json({ error: "Post not Created" });
 });
 
-router.delete("/:id", async (req, res) => {
+//UPDATE
+router.put("/:id", authorization, async (req, res) => {
   const { id } = req.params;
-  const deleteOneDiscussion = await deleteDiscussion(id);
-  deleteOneDiscussion.id
-    ? res.status(200).json({ deleteOneDiscussion })
-    : res.status(404).json({ error: "id not found!" });
-});
-
-router.put("/:id", async (req, res) => {
-  const { id } = req.params;
-  const updattingDiscussion = await updateDiscussion(id, req.body);
-  updattingDiscussion.id
+  const { userId } = req;  
+  const updattingDiscussion = await updateDiscussion(id, userId, req.body);
+  updattingDiscussion && updattingDiscussion.id
     ? res.status(200).json(updattingDiscussion)
     : res.status(500).json({ error: "Did not update discussion" });
 });
+
+//DELETE
+router.delete("/:id", authorization, async (req, res) => {
+  const { id } = req.params;
+  const { userId } = req;  
+
+  const deleteOneDiscussion = await deleteDiscussion(id, userId, req.body);
+  deleteOneDiscussion && deleteOneDiscussion.id
+    ? res.status(200).json({ deleteOneDiscussion })
+    : res.status(404).json({ error: "Can not delete!" });
+});
+
+
 
 module.exports = router;
