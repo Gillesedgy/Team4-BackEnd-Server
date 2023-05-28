@@ -61,18 +61,20 @@ router.post("/", authorization, async (req, res) => {
 
 // UPDATE
 router.put("/:id", authorization, async (req, res) => {
+  const {userId} = req
   const { id } = req.params;
-  const updatedListing = await updateListing(id, req.body);
-  updatedListing.id
+  const updatedListing = await updateListing(id, userId, req.body);
+  updatedListing && updatedListing.id
     ? res.status(200).json(updatedListing)
     : res.status(500).json({ error: "Listing didnot Update" });
 });
 
 //  DELETE
 router.delete("/:id", authorization, async (req, res) => {
+  const {userId} = req
   const { id } = req.params;
-  const deleteOneListing = await deleteListing(id, req.body);
-  deleteOneListing.id
+  const deleteOneListing = await deleteListing(id, userId, req.body);
+  deleteOneListing && deleteOneListing.id
     ? res.status(200).json({ deleteOneListing })
     : res.status(404).json({ error: "Listing not deleted!" });
 });

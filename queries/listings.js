@@ -64,10 +64,10 @@ const addListing = async (listing) => {
 };
 
 //Update
-const updateListing = async (id, listing) => {
+const updateListing = async (id, userId, listing) => {
   try {
     const updatedListing = await db.one(
-      "UPDATE listings SET description=$1, native_language=$2, image_url=$3, date_posted=$4, price=$5, location=$6, is_applied=$7, is_favorite=$8, title=$9, company=$10, rooms=$11 WHERE id=$12 RETURNING *",
+      "UPDATE listings SET description=$1, native_language=$2, image_url=$3, date_posted=$4, price=$5, location=$6, is_applied=$7, is_favorite=$8, title=$9, company=$10, rooms=$11 WHERE id=$12 AND user_id=$13 RETURNING *",
       [
         listing.description,
         listing.native_language,
@@ -81,6 +81,7 @@ const updateListing = async (id, listing) => {
         listing.company,
         listing.rooms,
         id,
+        userId
       ]
     );
 
@@ -91,11 +92,11 @@ const updateListing = async (id, listing) => {
 };
 
 // delete
-const deleteListing = async (id) => {
+const deleteListing = async (id, userId) => {
   try {
     const deletedListing = await db.one(
-      "DELETE FROM listings WHERE id=$1 RETURNING *",
-      id
+      "DELETE FROM listings WHERE id=$1 AND user_id=$2 RETURNING *",
+      [id, userId]
     );
     return deletedListing;
   } catch (error) {
