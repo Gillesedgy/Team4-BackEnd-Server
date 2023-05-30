@@ -87,4 +87,3 @@ INSERT INTO categories (name) VALUES
 ('Activities'),
 ('Jobs'),
 ('Rentals');
-
