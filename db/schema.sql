@@ -42,7 +42,7 @@ CREATE TABLE listings(
     user_id INTEGER REFERENCES users(id),
     description TEXT NOT NULL,
     native_language VARCHAR(50) NOT NULL,
-    image_url TEXT,
+    image_url TEXT [],
     date_posted DATE NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     location VARCHAR(250) NOT NULL,
