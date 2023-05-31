@@ -12,7 +12,15 @@ CREATE TABLE users(
     password VARCHAR(250) NOT NULL,
     address TEXT NOT NULL,
     native_language VARCHAR(50) NOT NULL,
-    image_url TEXT
+    image_url TEXT [] ,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+DROP TABLE IF EXISTS categories;
+
+CREATE TABLE categories(
+ id SERIAL PRIMARY KEY,
+ name VARCHAR(250) NOT NULL
 );
 
 DROP TABLE IF EXISTS jobs;
@@ -32,9 +40,8 @@ CREATE TABLE jobs(
     skills TEXT, 
     requirements TEXT,
     salary DECIMAL(10, 2),
-    logo TEXT
+    logo TEXT 
 );
-
 
 DROP TABLE IF EXISTS listings;
 
@@ -43,7 +50,7 @@ CREATE TABLE listings(
     user_id INTEGER REFERENCES users(id),
     description TEXT NOT NULL,
     native_language VARCHAR(50) NOT NULL,
-    image_url TEXT [],
+    image_url TEXT [] ,
     date_posted DATE NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     location VARCHAR(250) NOT NULL,
@@ -54,7 +61,6 @@ CREATE TABLE listings(
     rooms INTEGER 
 );
 
-
 DROP TABLE IF EXISTS community_board;
 
 CREATE TABLE community_board(
@@ -62,11 +68,10 @@ CREATE TABLE community_board(
     user_id INTEGER REFERENCES users(id),
     post_title VARCHAR(250) NOT NULL,
     post_content TEXT NOT NULL,
-    image_url TEXT,
+    image_url TEXT [], 
     created_at TIMESTAMP DEFAULT NOW(),
     updated_at TIMESTAMP DEFAULT NOW(),
     native_language VARCHAR(50) NOT NULL
-   
 );
 
 DROP TABLE IF EXISTS comments;
@@ -76,9 +81,20 @@ CREATE TABLE comments(
  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
  community_board_id INTEGER REFERENCES community_board(id) ON DELETE CASCADE,
  comment_body TEXT,
- image_url TEXT
+ created_at TIMESTAMP DEFAULT NOW(),
+ updated_at TIMESTAMP DEFAULT NOW(), 
+ image_url TEXT [] 
 );
 
+DROP TABLE IF EXISTS likes;
+
+CREATE TABLE likes (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  comment_id INTEGER REFERENCES comments(id) ON DELETE CASCADE,
+  created_at TIMESTAMP DEFAULT NOW(),
+  UNIQUE(user_id, comment_id)
+);
 
 DROP TABLE IF EXISTS favorites;
 
@@ -91,9 +107,3 @@ CREATE TABLE favorites (
     UNIQUE(user_id, community_board_id, job_id, listing_id)
 );
 
-DROP TABLE IF EXISTS categories;
-
-CREATE TABLE categories(
- id SERIAL PRIMARY KEY,
- name VARCHAR(250) NOT NULL
-);

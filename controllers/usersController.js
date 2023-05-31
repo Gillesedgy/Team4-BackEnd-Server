@@ -13,7 +13,12 @@ const {
   userDiscussion,
   userJob,
   createJob,
+  userFavorite,
+  userFavoriteListings,
+  userFavoriteCommunityboard,
+  userFavoriteJob,
 } = require("../queries/users")
+const { router } = require("../app")
 
 // sign up
 
@@ -150,6 +155,45 @@ users.get("/favorites", authorization, async (req, res) => {
   }
 })
 
+// user favorite listings
+router.get("/listings", authorization, async (req, res) => {
+  try {
+    const { userId } = req
+    const favoriteListings = await userFavoriteListings(userId)
+    res.status(200).json(favoriteListings)
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ error: "Error retrieving favorite listings" })
+  }
+})
+
+// user favorite communityboard Post
+router.get("/communityboard", authorization, async (req, res) => {
+  try {
+    const { userId } = req
+    const userFavoriteCommunityboardPosts =
+      await userFavoriteCommunityboardPosts(userId)
+    res.status(200).json(userFavoriteCommunityboardPosts)
+  } catch (error) {
+    console.error(error)
+    res
+      .status(500)
+      .json({ error: "Error retrieving favorite community board posts" })
+  }
+})
+
+// user favorite jobs
+router.get("/jobs", authorization, async (req, res) => {
+  try {
+    const favoriteJobs = await userFavoriteJob(userId)
+    res.status(200).json(userFavoriteJob)
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ error: "Error retrieving favorite jobs" })
+  }
+})
+
+// user verify
 users.get("/verify", authorization, async (req, res) => {
   try {
     res.json(true)
