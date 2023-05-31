@@ -16,7 +16,7 @@ app.use(cors())
 
 //routes
 app.use("/categories", categoriesController)
-app.use("favorites", favoritesController)
+app.use("/favorites", favoritesController)
 app.use("/comments", commentsController)
 app.use("/communityBoard", communityBoardController)
 app.use("/jobs", jobsController)

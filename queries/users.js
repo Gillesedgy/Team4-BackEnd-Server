@@ -88,7 +88,7 @@ const userDiscussion = async (id) => {
     return err
   }
 }
-
+// all user favorite
 async function userFavorite(id) {
   try {
     const userFavorites = await db.any(
@@ -101,6 +101,42 @@ async function userFavorite(id) {
   }
 }
 
+// user Favorite listings
+async function userFavoriteListings(id) {
+  try {
+    const favoriteListings = await db.any(
+      "SELECT * FROM favorites WHERE user_id = $ 1 AND listing_id IS NOT NULL"
+    )
+    return favoriteListings
+  } catch (error) {
+    return error
+  }
+}
+// user Favorite communityboard Post
+async function userFavoriteCommunityboard(userId) {
+  try {
+    const favoriteCommunityBoardPost = await db.any(
+      "SELECT * FROM favorites WHERE user_id = $1 AND community_board_id IS NOT NULL",
+      userId
+    )
+    return favoriteCommunityBoardPost
+  } catch (error) {
+    return error
+  }
+}
+
+// get users favorite jobs
+async function userFavoriteJobs(userId) {
+  try {
+    const favoriteJobs = await db.any(
+      " SELECT * FROM favorites WHERE user_id = $1 AND job_id IS NOT NULL",
+      userId
+    )
+    return favoriteJobs
+  } catch (error) {
+    return error
+  }
+}
 module.exports = {
   signUpUser,
   loginUser,
@@ -108,4 +144,8 @@ module.exports = {
   userListings,
   userDiscussion,
   userJob,
+  userFavorite,
+  userFavoriteListings,
+  userFavoriteCommunityboard,
+  userFavoriteJobs,
 }
