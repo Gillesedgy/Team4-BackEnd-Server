@@ -4,15 +4,15 @@ const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
 const signUpUser = async (user) => {
-  const { username, email, password, address, native_language } = user;
+  const { username, email, password, address, native_language, image_url } = user;
   try {
     const salt = await bcrypt.genSalt(saltRounds);
 
     const hashedPassword = await bcrypt.hash(password, salt);
 
     const newUser = await db.one(
-      "INSERT INTO users(username, email, password, address, native_language) VALUES($1, $2, $3, $4, $5) RETURNING *",
-      [username, email, hashedPassword, address, native_language]
+      "INSERT INTO users(username, email, password, address, native_language, image_url) VALUES($1, $2, $3, $4, $5, $6) RETURNING *",
+      [username, email, hashedPassword, address, native_language, image_url]
     );
 
     if (newUser) {

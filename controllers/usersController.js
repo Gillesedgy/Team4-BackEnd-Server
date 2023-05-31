@@ -19,11 +19,16 @@ const {
 
 users.post("/signup", validInfo, async (req, res) => {
   try {
-    const user = await signUpUser(req.body);
+    const user = await signUpUser({
+      ...req.body,
+      image_url:
+        req.body.image_url ||
+        "https://res.cloudinary.com/dldvfnn89/image/upload/v1685495938/Screen_Shot_2023-05-30_at_9.18.39_PM_d8uzsv.png",
+    });
 
     const { username } = user;
     const token = jwtGenerator(user.id);
-    //res.json({ token });
+
     res.status(200).json({ username, token: token });
   } catch (err) {
     return err;
@@ -35,7 +40,7 @@ users.post("/signup", validInfo, async (req, res) => {
 users.post("/login", validInfo, async (req, res) => {
   try {
     const user = await loginUser(req.body);
-    
+
     const { username, id } = user;
     if (username) {
       const token = jwtGenerator(user.id);
@@ -63,9 +68,11 @@ users.get("/profile", authorization, async (req, res) => {
     }
 
     // destructure the user object
-    const { username, email, address, native_language } = user;
+    const { username, email, address, native_language, image_url } = user;
 
-    res.status(200).json({ username, email, address, native_language });
+    res
+      .status(200)
+      .json({ username, email, address, native_language, image_url });
   } catch (err) {
     return err;
   }

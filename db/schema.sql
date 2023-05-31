@@ -31,7 +31,8 @@ CREATE TABLE jobs(
     is_favorite BOOLEAN DEFAULT FALSE,
     skills TEXT, 
     requirements TEXT,
-    salary DECIMAL(10, 2)
+    salary DECIMAL(10, 2),
+    logo TEXT
 );
 
 
