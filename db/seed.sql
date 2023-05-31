@@ -1,43 +1,60 @@
 \c  out_n_abt;
 
-INSERT INTO users (username, email, password, address, native_language, image_url) VALUES
-('Nickolaus dymaikvi', 'nickd@gmail.com', 'password123', '123 Main St, NY, NY, 10001', 'German','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Julia Andrews', 'julia@gmail.com', 'qwerty123', '456 High St, Queenz, NY, 10002', 'Spanish','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Mike Gonzalez', 'MikeGonzalez@yahoo.com', 'pass1234', '142 Linden blvd, Queenz, NY', 'French','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Mary Jackson', 'maryjackson@gmail.com', 'mysecurepassword', '111 concord St, Bronx, NY', 'English','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Dave Lee', 'davelee@hotmail.com', 'mypassword123', '555 Franklin St, Brooklyn, NY', 'Chinese','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Eric Smithy', 'eric@gmail.com', 'mypassword123', '777 Broadway, Queens, NY', 'French','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Edgy Gilles', 'edgy65@gmail.com', 'mypa23', '888 Bedford, NY', 'Creole','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Mina Grullon', 'mina07@gmail.com', 'mypassword123', '179 Thomas lane, Queens Village, NY', 'French','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Dilruba Majumder', 'dilruba23@gmail.com', 'my123dil', '17 Forest Street, Queens, NY', 'French','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Nikesh Wankhade', 'nikesh11@gmail.com', 'myword1nik23', '228 Linden blvd, Queens, NY', 'French','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Lennie Nurse', 'lennie12@gmail.com', 'passlen123', '127 east 45 street, brooklyn, NY', 'Spanish','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('JD Richards', 'jd23@gmail.com', 'jdworld30', '100 east 77st , Manhattan, NY', 'French','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Carlos Goday', 'carlos47@gmail.com', 'carlopass123', '777 Broad, brooklyn, NY', 'English','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Destiny Joner', 'destiny@gmail.com', 'destiny30', '140 President street, Brooklyn, NY', 'Spanish','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Jacksonjim', 'jacksonjim@gmail.com', 'jacksonhouse30', '222 Weller lane, Queens, NY', 'English','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Triane Peart', 'tritri12@gmail.com', 'trigirl', '888 Broadway, Queens, NY', 'English','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Rhula Nadu', 'rhulaN@gmail.com', 'naduhouseruler', '888 Broadway, Queens, NY', 'Arabic','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Amir Kapoor', 'amirkap@gmail.com', 'akapor007', '888 Jamaica Ave, Queens, NY', 'Bangali','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Dan Mazzili', 'dman@gmail.com', 'Mazziliworld30', ' 346 Hunter Ave, Staten island, NY', 'italian','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-('Johannes Bauer', 'jim@gmail.com', 'jBauer1230', '180 Fremont Ave, Staten island, NY', 'German','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image');
+INSERT INTO users (username, email, password, address, native_language, image_url) VALUES 
+('nickolaus dymaikvi', 'nickd@gmail.com', 'password123', '123 Main St, NY, NY, 10001', 'German','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('JuliaAndrews', 'juliaAndrews@gmail.com', 'qwerty123', '456 High St, Queenz, NY, 10002', 'Spanish','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('MikeGonzalez', 'MikeGonzalez@yahoo.com', 'pass1234', '142 Linden blvd, Queenz, NY', 'French','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('MaryJackson', 'maryjackson@gmail.com', 'mysecurepassword', '111 concord St, Bronx, NY', 'English','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('DaveLee', 'davelee@hotmail.com', 'mypassword123', '555 Franklin St, Brooklyn, NY', 'Chinese','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('EricSmithy', 'eric@gmail.com', 'mypassword123', '777 Broadway, Queens, NY', 'French','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('Edgy', 'edgy65@gmail.com', 'mypa23', '888 Bedford, NY', 'Creole','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('Mina', 'mina07@gmail.com', 'mypassword123', '179 Thomas lane, Queens Village, NY', 'French','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('Dilruba', 'dilruba23@gmail.com', 'my123dil', '17 Forest Street, Queens, NY', 'French','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('Nikesh', 'nikesh11@gmail.com', 'myword1nik23', '228 Linden blvd, Queens, NY', 'French','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('Lennie', 'lennie12@gmail.com', 'passlen123', '127 east 45 street, brooklyn, NY', 'Spanish','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('JD', 'jd23@gmail.com', 'jdworld30', '100 east 77st , Manhattan, NY', 'French','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('Carlos', 'carlos47@gmail.com', 'carlopass123', '777 Broad, brooklyn, NY', 'English','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('Destiny', 'destiny@gmail.com', 'destiny30', '140 President street, Brooklyn, NY', 'Spanish','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('jacksonjim', 'jacksonjim@gmail.com', 'jacksonhouse30', '222 Weller lane, Queens, NY', 'English','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('Triane', 'tritri12@gmail.com', 'trigirl', '888 Broadway, Queens, NY', 'English','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('RhulaNadu', 'rhulaN@gmail.com', 'naduhouseruler', '888 Broadway, Queens, NY', 'Arabic','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('Aamir Kapoor', 'Akapoor@gmail.com', 'akapor007', '888 Jamaica Ave, Queens, NY', 'Bangali','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('Dan Mazzili', 'DanM@gmail.com', 'Mazziliworld30', ' 346 Hunter Ave, Staten island, NY', 'italian','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+('Johannes Bauer', 'jim@gmail.com', 'jBauer1230', '180 Fremont Ave, Staten island, NY', 'German','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}');
 
+INSERT INTO categories (name) VALUES
+('Apartments'),
+('Events'),
+('Furniture'),
+('Homes'),
+('Food'),
+('Casas'),
+('Housing'),
+('Language'),
+('Other'),
+('Activities'),
+('Jobs'),
+('Rentals');
 
-INSERT INTO jobs(user_id, job_title, company, email, location, posted_date, job_type, description, native_language, is_favorite, skills, requirements, salary) VALUES 
-(1, 'Web Developer', 'Acme Inc.', 'jobs@acmeinc.com', 'New York, NY', '2022-05-10 12:00:00', 'Full-Time', 'We are seeking an experienced web developer to join our team. The ideal candidate should have experience with HTML, CSS, JavaScript, and React.', 'English', FALSE, 'Full-stack web developer', 'none', 45.00),
-(2, 'Software Engineer', 'Tech Solutions', 'jobs@techsolutions.com', 'Seattle, WA', '2022-05-09 14:15:00', 'Full-Time', 'We are seeking a talented software engineer to develop and maintain our web application. The ideal candidate should have experience with Ruby on Rails and React.', 'English', FALSE, 'none', 'none', 75.000),
-(3, 'Graphic Designer', 'Design Co.', 'jobs@designco.com', 'Long island, NY', '2022-05-10 10:00:00', 'Part-Time', 'We are looking for a creative and detail-oriented graphic designer to join our team. The ideal candidate should have experience with Adobe Creative Suite and branding design.', 'English', FALSE,'Full-stack','windows knowledge',60.000),
-(4, 'Customer Service Representative', 'XYZ Corporation', 'jobs@xyzcorp.com', 'Queens, NY', '2022-05-09 11:45:00', 'Full-Time', 'We are looking for a friendly and customer-focused representative to handle inquiries and provide support to our clients. The ideal candidate should have excellent communication and problem-solving skills.', 'English', FALSE, 'Communication skills, Customer service skills', 'High school diploma or equivalent', 16.00),
-(5, 'Sales Representative', 'Sales Co.', 'jobs@salesco.com', 'New York, NY', '2022-05-10 13:30:00', 'Full-Time', 'We are looking for a motivated and results-driven sales representative to sell our products and services. The ideal candidate should have with sales and lead generation.', 'English', FALSE,' Customer service skills','two years experience', 35.000),
-(6, 'Server', 'The Cheesecake Factory', 'server@cheesecakefactory.com', 'New York City', '2023-05-16 02:39:50', 'Part-time', 'Serving food and drinks to customers', 'English', false, 'Communication skills, Customer service skills', 'High school diploma or equivalent', 10.00),
-(7, 'Cashier', 'Walmart', 'cashier@walmart.com', 'Brooklyn', '2023-05-16 02:39:50', 'Full-time', 'Handling cash and credit card transactions at the register', 'English', false, 'Math skills, Customer service skills', 'High school diploma or equivalent', 12.00),
-(8, 'Janitorial Staff', 'NYC Department of Education', 'janitor@nycdoe.com', 'Queens', '2023-05-16 02:39:50', 'Full-time', 'Cleaning classrooms and common areas in schools', 'English and Spanish', false, 'none', 'none', 15.00),
-(9, 'Delivery Driver', 'Dominos Pizza', 'driver@dominos.com', 'Bronx', '2023-05-16 02:39:50', 'Part-time', 'Delivering pizzas to customers homes', 'English', false, 'Drivers license', 'none', 9.00),
-(10, 'Sales Associate', 'Macys', 'sales@macys.com', 'Staten Island', '2023-05-16 02:39:50', 'Full-time', 'Assisting customers with purchases and returns', 'English and Mandarin Chinese', false, 'none', 'none', 11.00),
-(11, 'Housekeeper', 'Clean Sweep Services', 'careers@cleansweepservices.com', 'Brooklyn, NY', '2023-04-28 12:00:00','Part-time', 'Clean Sweep Services is hiring a part-time housekeeper to clean homes and apartments in the Brooklyn area. The ideal candidate will be reliable, thorough, and able to work independently.','Spanish',true,'Cleaning, Organization, Time Management','High school diploma or equivalent, Previous experience in housekeeping',20.00),
-(12, 'Head Housekeeper', 'Riverfront Inn', 'hr@riverfrontinn.com', 'Albany, NY', '2023-05-05 10:00:00', 'Full-time', 'Riverfront Inn is seeking a head housekeeper to manage our housekeeping team and ensure that our guest rooms are always clean and well-stocked. The ideal candidate will have previous hotel housekeeping experience and strong leadership skills.','English' ,false,'Housekeeping, Leadership, Time Management', 'High school diploma or equivalent, Previous experience in hotel housekeeping, Supervisory experience', 60000.00),
-(13, 'Taxi Dispatcher', 'Green Cab', 'dispatcher@greencab.com', 'New York City', '2022-05-02 10:00:00', 'Part-time','Dispatch taxi drivers to their pickup locations', 'English', true, 'Communication, Multitasking', 'Experience in dispatching or customer service',25000.00);
-
+INSERT INTO jobs(user_id, job_title, company, email, location, posted_date, job_type, description, native_language, is_favorite, skills, requirements, salary, logo) VALUES 
+(1, 'Shampooer', 'ABC Company', 'shampooer@company.com', 'New York City, NY', '2023-05-26 04:23:50', 'Full-time', 'Job description for shampooer position.', 'English', FALSE, 'Experience in shampooing and cleaning', 'High school diploma or equivalent', 12.50, NULL),
+(2, 'Cook', 'XYZ Restaurant', 'cook@restaurant.com', 'Bronx, NY', '2023-05-28 11:00:00', 'Part-time', 'Job description for cook position.', 'English', FALSE, 'Experience in cooking and food preparation', 'Culinary degree preferred', 15.75, NULL),
+(3, 'Host/Hostess', '123 Cafe', 'host@cafe.com', 'Queens, NY', '2023-05-15 14:00:00', 'Full-time', 'Job description for host/hostess position.', 'English', FALSE, 'Excellent communication and customer service skills', 'Flexible schedule', 10.00, NULL),
+(4, 'Fast-Food/Counter Worker', 'QuickBites', 'worker@quickbites.com', 'Brooklyn, NY','2023-05-29 10:35:00' , 'Part-time', 'Job description for fast-food/counter worker position.', 'English', FALSE, 'Ability to work in a fast-paced environment', 'No prior experience required', 9.00, NULL),
+(5, 'Amusement/Recreation Attendant', 'FunPark', 'attendant@funpark.com', 'Queens, NY', '2023-05-30 09:45:00', 'Seasonal', 'Job description for amusement/recreation attendant position.', 'English', FALSE, 'Knowledge of safety procedures', 'Ability to work in outdoor conditions', 11.25, NULL),
+(6, 'Usher/Lobby Attendant', 'TheaterX', 'usher@theaterx.com', 'New York, NY','2023-05-31 09:45:00' , 'Part-time', 'Job description for usher/lobby attendant position.', 'English', FALSE, 'Strong interpersonal skills', 'Ability to work evenings and weekends', 9.50, NULL),
+(7, 'Cashier', 'ShoeRite Mart', 'cashier@shopritemart.com', 'Brooklyn, NY','2022-05-30 14:30:00', 'Full-time', 'Job description for cashier position.', 'English', FALSE, 'Basic math and cash handling skills', 'High school diploma or equivalent', 13.00, NULL),
+(8, 'Recreational Protective Services', 'Long Island Beach Resort', 'rps@LIbeachresort.com', 'Nassau, NY', '2023-05-31 11:45:00', 'Seasonal', 'Job description for recreational protective services position.', 'English', FALSE, 'CPR and First Aid certification', 'Strong swimming skills', 14.50, NULL),
+(9, 'Customer Service Representative', 'XYZ Corporation', 'jobs@xyzcorp.com', 'Queens, NY', '2022-05-09 11:45:00', 'Full-Time', 'We are looking for a friendly and customer-focused representative to handle inquiries and provide support to our clients. The ideal candidate should have excellent communication and problem-solving skills.', 'English', FALSE, 'Communication skills, Customer service skills', 'High school diploma or equivalent', 16.00, NULL),
+(10, 'Sales Representative', 'Sales Co.', 'jobs@salesco.com', 'New York, NY', '2022-05-10 13:30:00', 'Full-Time', 'We are looking for a motivated and results-driven sales representative to sell our products and services. The ideal candidate should have with sales and lead generation.', 'English', FALSE,' Customer service skills','two years experience', 35.000, NULL),
+(11, 'Server', 'The Cheesecake Factory', 'server@cheesecakefactory.com', 'New York City', '2023-05-16 02:39:50', 'Part-time', 'Serving food and drinks to customers', 'English', false, 'Communication skills, Customer service skills', 'High school diploma or equivalent', 10.00, NULL),
+(12, 'Cashier', 'Walmart', 'cashier@walmart.com', 'Brooklyn', '2023-05-16 02:39:50', 'Full-time', 'Handling cash and credit card transactions at the register', 'English', false, 'Math skills, Customer service skills', 'High school diploma or equivalent', 12.00, NULL),
+(13, 'Janitorial Staff', 'NYC Department of Education', 'janitor@nycdoe.com', 'Queens', '2023-05-16 02:39:50', 'Full-time', 'Cleaning classrooms and common areas in schools', 'English and Spanish', false, 'none', 'none', 15.00, NULL),
+(14, 'Delivery Driver', 'Dominos Pizza', 'driver@dominos.com', 'Bronx', '2023-05-16 02:39:50', 'Part-time', 'Delivering pizzas to customers homes', 'English', false, 'Drivers license', 'none', 9.00, NULL),
+(15, 'Sales Associate', 'Macys', 'sales@macys.com', 'Staten Island', '2023-05-16 02:39:50', 'Full-time', 'Assisting customers with purchases and returns', 'English and Mandarin Chinese', false, 'none', 'none', 11.00, NULL),
+(16, 'Housekeeper', 'Clean Sweep Services', 'careers@cleansweepservices.com', 'Brooklyn, NY', '2023-04-28 12:00:00','Part-time', 'Clean Sweep Services is hiring a part-time housekeeper to clean homes and apartments in the Brooklyn area. The ideal candidate will be reliable, thorough, and able to work independently.','Spanish',true,'Cleaning, Organization, Time Management','High school diploma or equivalent, Previous experience in housekeeping',20.00, NULL),
+(17, 'Head Housekeeper', 'Riverfront Inn', 'hr@riverfrontinn.com', 'Albany, NY', '2023-05-05 10:00:00', 'Full-time', 'Riverfront Inn is seeking a head housekeeper to manage our housekeeping team and ensure that our guest rooms are always clean and well-stocked. The ideal candidate will have previous hotel housekeeping experience and strong leadership skills.','English' ,false,'Housekeeping, Leadership, Time Management', 'High school diploma or equivalent, Previous experience in hotel housekeeping, Supervisory experience', 60000.00, NULL),
+(18, 'Taxi Dispatcher', 'Green Cab', 'dispatcher@greencab.com', 'New York City', '2022-05-02 10:00:00', 'Part-time','Dispatch taxi drivers to their pickup locations', 'English', true, 'Communication, Multitasking', 'Experience in dispatching or customer service',25000.00, NULL);
 
 INSERT INTO listings (user_id, description, native_language, image_url, date_posted, price, location, is_applied, is_favorite, title, company, rooms) VALUES 
 (1, 'Beautiful 2-bedroom apartment for rent. A five minute walk to the nearest train station. pet friendly ', 'English', '{"https://res.cloudinary.com/dldvfnn89/image/upload/v1685117772/2bd_jamaica_ave10_n_gsiuly.jpg","https://res.cloudinary.com/dldvfnn89/image/upload/v1685117723/2bd_jamaica_ave06_n_alesfj.jpg","https://res.cloudinary.com/dldvfnn89/image/upload/v1685117717/2bd_jamaica_ave05_n_b1lnmg.jpg","https://res.cloudinary.com/dldvfnn89/image/upload/v1685117712/2bd_jamaica_ave04_n_ocihu6.jpg"}', '2023-05-01', 2000.00 ,'261 Rocky River st. Brooklyn NY 11211',  false, false, 'Spacious Apartment', 'ABC Realty', 2),
@@ -61,19 +78,27 @@ INSERT INTO listings (user_id, description, native_language, image_url, date_pos
 (19, 'Appartamento conveniente di tre camere da letto a Staten Island per famiglie a basso reddito. Include un cortile e un garage.', 'italian', '{"https://res.cloudinary.com/dldvfnn89/image/upload/v1685376974/IMG_9236_Medium_kgikct.png","https://res.cloudinary.com/dldvfnn89/image/upload/v1685376975/IMG_9234_Medium_fedit2.png","https://res.cloudinary.com/dldvfnn89/image/upload/v1685376975/IMG_9239_Medium_eeqqnq.png","https://res.cloudinary.com/dldvfnn89/image/upload/v1685376976/IMG_9237_Medium_jmpvfr.png","https://res.cloudinary.com/dldvfnn89/image/upload/v1685376976/IMG_9235_Medium_jzkn45.png","https://res.cloudinary.com/dldvfnn89/image/upload/v1685376975/IMG_9233_Medium_u5rfwy.png","https://res.cloudinary.com/dldvfnn89/image/upload/v1685376976/IMG_9238_Medium_kzdsjq.png"}', '2023-05-12', 1800.00, '9389 Thorne Drive Staten Island, NY 10312', FALSE, FALSE,' Appartamento di tre camere da letto a Staten Island.', NULL, 3),
 (20, 'Günstige Zweizimmerwohnung in Staten Island für einkommensschwache Familien. Enthält einen Hinterhof und eine Garage.', 'German', '{"https://res.cloudinary.com/dldvfnn89/image/upload/v1685453700/S.I.2bd01_n_zgj32m.jpg","https://res.cloudinary.com/dldvfnn89/image/upload/v1685453700/S.I.2bd02_n_xkp9vv.jpg","https://res.cloudinary.com/dldvfnn89/image/upload/v1685453700/S.I.2bd03_n_o7oi3h.jpg","https://res.cloudinary.com/dldvfnn89/image/upload/v1685453700/S.I.2bd04_n_joihil.jpg","https://res.cloudinary.com/dldvfnn89/image/upload/v1685453700/S.I.2bd05_n_s5duob.jpg","https://res.cloudinary.com/dldvfnn89/image/upload/v1685453700/S.I.2bd06_n_yon6gb.jpg"}', '2023-05-16', 1850.00, '61 Frazer street, Staten Island, NY 10312', FALSE, FALSE,'Dreizimmerwohnung in Staten Island.', NULL, 2);
 
+
 INSERT INTO community_board (user_id, post_title, post_content, image_url, native_language) VALUES
-(1, 'Looking for a new recipe to try', 'Im tired of making the same meals all the time. Does anyone have a favorite recipe they like to share?', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', 'English'),
-(2, 'Recomendaciones de libros', 'Me gustaría leer algo nuevo y emocionante. ¿Alguien tiene alguna recomendación de libros?', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', 'Spanish'),
-(3, 'Conseils pour faire du yoga à la maison', 'Je suis nouveau dans le yoga et j aimerais en faire à la maison. Des conseils pour un débutant?', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', 'French'),
-(4, 'New hobby ideas', 'I need a new hobby to fill my free time. What are some hobbies that you enjoy?', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', 'English'),
-(5, 'Sugerencias de películas', 'Me encanta ver películas en mi tiempo libre. ¿Alguien tiene alguna sugerencia de películas para ver?', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', 'Spanish');
+(1, 'Looking for a new recipe to try', 'Im tired of making the same meals all the time. Does anyone have a favorite recipe they like to share?', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', 'English'),
+(2, 'Recomendaciones de libros', 'Me gustaría leer algo nuevo y emocionante. ¿Alguien tiene alguna recomendación de libros?', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', 'Spanish'),
+(3, 'Conseils pour faire du yoga à la maison', 'Je suis nouveau dans le yoga et j aimerais en faire à la maison. Des conseils pour un débutant?', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', 'French'),
+(4, 'New hobby ideas', 'I need a new hobby to fill my free time. What are some hobbies that you enjoy?', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', 'English'),
+(5, 'Sugerencias de películas', 'Me encanta ver películas en mi tiempo libre. ¿Alguien tiene alguna sugerencia de películas para ver?', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', 'Spanish');
 
 INSERT INTO comments (user_id, community_board_id, comment_body,image_url) VALUES
-(1, 1, 'I recommend checking out neighborhoods near the downtown area.','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-(2, 1, 'I found a great apartment using Zillow. You should give it a try!','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-(3, 2, 'Puedes buscar en sitios como Idealista o Fotocasa.','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-(4, 2, 'Si necesitas ayuda con la mudanza, puedo recomendarte una buena empresa.','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
-(5, 3, 'Pour trouver une maison à louer, je vous conseille de chercher sur Leboncoin ou PAP.','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image');
+(1, 1, '{"I recommend checking out neighborhoods near the downtown area."}','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+(2, 1, '{"I found a great apartment using Zillow. You should give it a try!"}','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+(3, 2, '{"Puedes buscar en sitios como Idealista o Fotocasa."}','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+(4, 2, '{"Si necesitas ayuda con la mudanza, puedo recomendarte una buena empresa."}','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
+(5, 3, '{"Pour trouver une maison à louer, je vous conseille de chercher sur Leboncoin ou PAP."}','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}');
+
+INSERT INTO likes (user_id, comment_id) VALUES
+  (1, 1),
+  (2, 1),
+  (3, 2),
+  (4, 3),
+  (5, 5);
 
 INSERT INTO favorites (user_id, listing_id, community_board_id, job_id) VALUES
 (1, 1, NULL, NULL),
@@ -81,18 +106,3 @@ INSERT INTO favorites (user_id, listing_id, community_board_id, job_id) VALUES
 (3, NULL, NULL, 1),
 (4, 2, NULL, NULL),
 (5, NULL, 2, NULL);
-
-INSERT INTO categories (name) VALUES
-('Apartments'),
-('Events'),
-('Furniture'),
-('Homes'),
-('Food'),
-('Casas'),
-('Housing'),
-('Language'),
-('Other'),
-('Activities'),
-('Jobs'),
-('Rentals');
-
