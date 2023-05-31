@@ -8,6 +8,6 @@ function jwtGenerator(user_id) {
   const payload = {
     id: user_id,
   }
-  return jwt.sign(payload, SECRETKEY, { expiresIn: "1hr" })
+  return jwt.sign(payload, SECRETKEY, { expiresIn: "24hr" })
 }
 module.exports = jwtGenerator
