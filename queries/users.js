@@ -92,7 +92,7 @@ const userDiscussion = async (id) => {
 async function userFavorite(id) {
   try {
     const userFavorites = await db.any(
-      " SELECT * FROM favorites WHERE uaer_id=$1",
+      " SELECT * FROM favorites WHERE user_id=$1",
       id
     )
     return userFavorites

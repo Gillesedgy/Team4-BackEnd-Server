@@ -85,9 +85,9 @@ DROP TABLE IF EXISTS favorites;
 CREATE TABLE favorites (
     id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    job_id INTEGER REFERENCES jobs(id)ON DELETE CASCADE,
     listing_id INTEGER REFERENCES listings(id) ON DELETE CASCADE,
     community_board_id INTEGER REFERENCES community_board(id) ON DELETE CASCADE,
-    job_id INTEGER REFERENCES jobs(id)ON DELETE CASCADE,
     UNIQUE(user_id, community_board_id, job_id, listing_id)
 );
 
