@@ -52,7 +52,7 @@ router.post("/", authorization, async (req, res) => {
     userId,
     image_url:
       req.body.image_url ||
-      "https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image",
+      ["https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"],
   });
   newlisting
     ? res.status(200).json(newlisting)

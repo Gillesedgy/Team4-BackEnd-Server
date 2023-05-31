@@ -39,7 +39,7 @@ router.get("/user", authorization, async (req, res) => {
 router.post("/", authorization, async (req, res) => {
   const { userId } = req;
 
-  const newJob = await createJob({ ...req.body, userId });
+  const newJob = await createJob({ ...req.body, userId,logo: req.body.logo || "https://res.cloudinary.com/dldvfnn89/image/upload/v1685548548/Screen_Shot_2023-05-31_at_11.54.57_AM_mikwba.png" });
   newJob
     ? res.status(200).json(newJob)
     : res.status(500).json({ error: "error" });
