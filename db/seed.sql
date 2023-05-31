@@ -75,6 +75,13 @@ INSERT INTO comments (user_id, community_board_id, comment_body,image_url) VALUE
 (4, 2, 'Si necesitas ayuda con la mudanza, puedo recomendarte una buena empresa.','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
 (5, 3, 'Pour trouver une maison à louer, je vous conseille de chercher sur Leboncoin ou PAP.','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image');
 
+INSERT INTO favorites (user_id, listing_id, community_board_id, job_id) VALUES
+(1, 1, NULL, NULL),
+(2, NULL, 1, NULL),
+(3, NULL, NULL, 1),
+(4, 2, NULL, NULL),
+(5, NULL, 2, NULL);
+
 INSERT INTO categories (name) VALUES
 ('Apartments'),
 ('Events'),
@@ -88,3 +95,4 @@ INSERT INTO categories (name) VALUES
 ('Activities'),
 ('Jobs'),
 ('Rentals');
+
