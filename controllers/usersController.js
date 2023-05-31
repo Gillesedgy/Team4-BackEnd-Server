@@ -178,7 +178,7 @@ router.get("/communityboard", authorization, async (req, res) => {
     console.error(error)
     res
       .status(500)
-      .json({ error: "Error retrieving favoritecommunity board posts" })
+      .json({ error: "Error retrieving favorite community board posts" })
   }
 })
 
