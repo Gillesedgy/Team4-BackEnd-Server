@@ -156,7 +156,7 @@ users.get("/favorites", authorization, async (req, res) => {
 })
 
 // user favorite listings
-router.get("/listings", authorization, async (req, res) => {
+users.get("/listings", authorization, async (req, res) => {
   try {
     const { userId } = req
     const favoriteListings = await userFavoriteListings(userId)
@@ -168,7 +168,7 @@ router.get("/listings", authorization, async (req, res) => {
 })
 
 // user favorite communityboard Post
-router.get("/communityboard", authorization, async (req, res) => {
+users.get("/communityboard", authorization, async (req, res) => {
   try {
     const { userId } = req
     const userFavoriteCommunityboardPosts =
@@ -183,7 +183,7 @@ router.get("/communityboard", authorization, async (req, res) => {
 })
 
 // user favorite jobs
-router.get("/jobs", authorization, async (req, res) => {
+users.get("/jobs", authorization, async (req, res) => {
   try {
     const favoriteJobs = await userFavoriteJob(userId)
     res.status(200).json(userFavoriteJob)
