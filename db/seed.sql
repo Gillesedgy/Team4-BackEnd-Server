@@ -1,6 +1,7 @@
 \c  out_n_abt;
 
-INSERT INTO users (username, email, password, address, native_language, image_url) VALUES('Nickolaus dymaikvi', 'nickd@gmail.com', 'password123', '123 Main St, NY, NY, 10001', 'German','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+INSERT INTO users (username, email, password, address, native_language, image_url) VALUES
+('Nickolaus dymaikvi', 'nickd@gmail.com', 'password123', '123 Main St, NY, NY, 10001', 'German','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
 ('Julia Andrews', 'julia@gmail.com', 'qwerty123', '456 High St, Queenz, NY, 10002', 'Spanish','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
 ('Mike Gonzalez', 'MikeGonzalez@yahoo.com', 'pass1234', '142 Linden blvd, Queenz, NY', 'French','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
 ('Mary Jackson', 'maryjackson@gmail.com', 'mysecurepassword', '111 concord St, Bronx, NY', 'English','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),

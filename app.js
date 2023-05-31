@@ -3,6 +3,7 @@ const app = express()
 const cors = require("cors")
 
 const categoriesController = require("./controllers/categoriesController")
+const favoritesController = require("./controllers/favoritesController")
 const commentsController = require("./controllers/commentsController")
 const communityBoardController = require("./controllers/communityBoardController.js")
 const jobsController = require("./controllers/jobsController")
@@ -15,6 +16,7 @@ app.use(cors())
 
 //routes
 app.use("/categories", categoriesController)
+app.use("favorites", favoritesController)
 app.use("/comments", commentsController)
 app.use("/communityBoard", communityBoardController)
 app.use("/jobs", jobsController)
