@@ -12,13 +12,12 @@ const {
   userListings,
   userDiscussion,
   userJob,
-  createJob,
   userFavorite,
   userFavoriteListings,
   userFavoriteCommunityboard,
-  userFavoriteJob,
+  userFavoriteJobs,
 } = require("../queries/users")
-const { router } = require("../app")
+
 
 // sign up
 
@@ -172,7 +171,7 @@ users.get("/communityboard", authorization, async (req, res) => {
   try {
     const { userId } = req
     const userFavoriteCommunityboardPosts =
-      await userFavoriteCommunityboardPosts(userId)
+      await userFavoriteCommunityboard(userId)
     res.status(200).json(userFavoriteCommunityboardPosts)
   } catch (error) {
     console.error(error)
@@ -185,8 +184,8 @@ users.get("/communityboard", authorization, async (req, res) => {
 // user favorite jobs
 users.get("/jobs", authorization, async (req, res) => {
   try {
-    const favoriteJobs = await userFavoriteJob(userId)
-    res.status(200).json(userFavoriteJob)
+    const favoriteJobs = await userFavoriteJobs(userId)
+    res.status(200).json(favoriteJobs)
   } catch (error) {
     console.error(error)
     res.status(500).json({ error: "Error retrieving favorite jobs" })

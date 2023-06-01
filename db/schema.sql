@@ -12,7 +12,7 @@ CREATE TABLE users(
     password VARCHAR(250) NOT NULL,
     address TEXT NOT NULL,
     native_language VARCHAR(50) NOT NULL,
-    image_url TEXT [] ,
+    image_url TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -50,7 +50,7 @@ CREATE TABLE listings(
     user_id INTEGER REFERENCES users(id),
     description TEXT NOT NULL,
     native_language VARCHAR(50) NOT NULL,
-    image_url TEXT [] ,
+    image_url TEXT [],
     date_posted DATE NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
     location VARCHAR(250) NOT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE community_board(
     user_id INTEGER REFERENCES users(id),
     post_title VARCHAR(250) NOT NULL,
     post_content TEXT NOT NULL,
-    image_url TEXT [], 
+    image_url TEXT, 
     created_at TIMESTAMP DEFAULT NOW(),
     updated_at TIMESTAMP DEFAULT NOW(),
     native_language VARCHAR(50) NOT NULL
@@ -82,19 +82,9 @@ CREATE TABLE comments(
  community_board_id INTEGER REFERENCES community_board(id) ON DELETE CASCADE,
  comment_body TEXT,
  created_at TIMESTAMP DEFAULT NOW(),
- updated_at TIMESTAMP DEFAULT NOW(), 
- image_url TEXT [] 
+ updated_at TIMESTAMP DEFAULT NOW()
 );
 
-DROP TABLE IF EXISTS likes;
-
-CREATE TABLE likes (
-  id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  comment_id INTEGER REFERENCES comments(id) ON DELETE CASCADE,
-  created_at TIMESTAMP DEFAULT NOW(),
-  UNIQUE(user_id, comment_id)
-);
 
 DROP TABLE IF EXISTS favorites;
 
