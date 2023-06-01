@@ -1,26 +1,26 @@
 \c  out_n_abt;
 
 INSERT INTO users (username, email, password, address, native_language, image_url) VALUES 
-('nickolaus dymaikvi', 'nickd@gmail.com', 'password123', '123 Main St, NY, NY, 10001', 'German','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('JuliaAndrews', 'juliaAndrews@gmail.com', 'qwerty123', '456 High St, Queenz, NY, 10002', 'Spanish','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('MikeGonzalez', 'MikeGonzalez@yahoo.com', 'pass1234', '142 Linden blvd, Queenz, NY', 'French','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('MaryJackson', 'maryjackson@gmail.com', 'mysecurepassword', '111 concord St, Bronx, NY', 'English','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('DaveLee', 'davelee@hotmail.com', 'mypassword123', '555 Franklin St, Brooklyn, NY', 'Chinese','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('EricSmithy', 'eric@gmail.com', 'mypassword123', '777 Broadway, Queens, NY', 'French','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('Edgy', 'edgy65@gmail.com', 'mypa23', '888 Bedford, NY', 'Creole','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('Mina', 'mina07@gmail.com', 'mypassword123', '179 Thomas lane, Queens Village, NY', 'French','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('Dilruba', 'dilruba23@gmail.com', 'my123dil', '17 Forest Street, Queens, NY', 'French','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('Nikesh', 'nikesh11@gmail.com', 'myword1nik23', '228 Linden blvd, Queens, NY', 'French','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('Lennie', 'lennie12@gmail.com', 'passlen123', '127 east 45 street, brooklyn, NY', 'Spanish','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('JD', 'jd23@gmail.com', 'jdworld30', '100 east 77st , Manhattan, NY', 'French','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('Carlos', 'carlos47@gmail.com', 'carlopass123', '777 Broad, brooklyn, NY', 'English','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('Destiny', 'destiny@gmail.com', 'destiny30', '140 President street, Brooklyn, NY', 'Spanish','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('jacksonjim', 'jacksonjim@gmail.com', 'jacksonhouse30', '222 Weller lane, Queens, NY', 'English','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('Triane', 'tritri12@gmail.com', 'trigirl', '888 Broadway, Queens, NY', 'English','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('RhulaNadu', 'rhulaN@gmail.com', 'naduhouseruler', '888 Broadway, Queens, NY', 'Arabic','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('Aamir Kapoor', 'Akapoor@gmail.com', 'akapor007', '888 Jamaica Ave, Queens, NY', 'Bangali','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('Dan Mazzili', 'DanM@gmail.com', 'Mazziliworld30', ' 346 Hunter Ave, Staten island, NY', 'italian','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-('Johannes Bauer', 'jim@gmail.com', 'jBauer1230', '180 Fremont Ave, Staten island, NY', 'German','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}');
+('nickolaus dymaikvi', 'nickd@gmail.com', 'password123', '123 Main St, NY, NY, 10001', 'German','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('JuliaAndrews', 'juliaAndrews@gmail.com', 'qwerty123', '456 High St, Queenz, NY, 10002', 'Spanish','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('MikeGonzalez', 'MikeGonzalez@yahoo.com', 'pass1234', '142 Linden blvd, Queenz, NY', 'French','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('MaryJackson', 'maryjackson@gmail.com', 'mysecurepassword', '111 concord St, Bronx, NY', 'English','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('DaveLee', 'davelee@hotmail.com', 'mypassword123', '555 Franklin St, Brooklyn, NY', 'Chinese','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('EricSmithy', 'eric@gmail.com', 'mypassword123', '777 Broadway, Queens, NY', 'French','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Edgy', 'edgy65@gmail.com', 'mypa23', '888 Bedford, NY', 'Creole','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Mina', 'mina07@gmail.com', 'mypassword123', '179 Thomas lane, Queens Village, NY', 'French','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Dilruba', 'dilruba23@gmail.com', 'my123dil', '17 Forest Street, Queens, NY', 'French','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Nikesh', 'nikesh11@gmail.com', 'myword1nik23', '228 Linden blvd, Queens, NY', 'French','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Lennie', 'lennie12@gmail.com', 'passlen123', '127 east 45 street, brooklyn, NY', 'Spanish','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('JD', 'jd23@gmail.com', 'jdworld30', '100 east 77st , Manhattan, NY', 'French','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Carlos', 'carlos47@gmail.com', 'carlopass123', '777 Broad, brooklyn, NY', 'English','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Destiny', 'destiny@gmail.com', 'destiny30', '140 President street, Brooklyn, NY', 'Spanish','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('jacksonjim', 'jacksonjim@gmail.com', 'jacksonhouse30', '222 Weller lane, Queens, NY', 'English','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Triane', 'tritri12@gmail.com', 'trigirl', '888 Broadway, Queens, NY', 'English','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('RhulaNadu', 'rhulaN@gmail.com', 'naduhouseruler', '888 Broadway, Queens, NY', 'Arabic','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Aamir Kapoor', 'Akapoor@gmail.com', 'akapor007', '888 Jamaica Ave, Queens, NY', 'Bangali','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Dan Mazzili', 'DanM@gmail.com', 'Mazziliworld30', ' 346 Hunter Ave, Staten island, NY', 'italian','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image'),
+('Johannes Bauer', 'jim@gmail.com', 'jBauer1230', '180 Fremont Ave, Staten island, NY', 'German','https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image');
 
 INSERT INTO categories (name) VALUES
 ('Apartments'),
@@ -80,25 +80,19 @@ INSERT INTO listings (user_id, description, native_language, image_url, date_pos
 
 
 INSERT INTO community_board (user_id, post_title, post_content, image_url, native_language) VALUES
-(1, 'Looking for a new recipe to try', 'Im tired of making the same meals all the time. Does anyone have a favorite recipe they like to share?', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', 'English'),
-(2, 'Recomendaciones de libros', 'Me gustaría leer algo nuevo y emocionante. ¿Alguien tiene alguna recomendación de libros?', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', 'Spanish'),
-(3, 'Conseils pour faire du yoga à la maison', 'Je suis nouveau dans le yoga et j aimerais en faire à la maison. Des conseils pour un débutant?', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', 'French'),
-(4, 'New hobby ideas', 'I need a new hobby to fill my free time. What are some hobbies that you enjoy?', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', 'English'),
-(5, 'Sugerencias de películas', 'Me encanta ver películas en mi tiempo libre. ¿Alguien tiene alguna sugerencia de películas para ver?', '{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}', 'Spanish');
+(1, 'Looking for a new recipe to try', 'Im tired of making the same meals all the time. Does anyone have a favorite recipe they like to share?', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', 'English'),
+(2, 'Recomendaciones de libros', 'Me gustaría leer algo nuevo y emocionante. ¿Alguien tiene alguna recomendación de libros?', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', 'Spanish'),
+(3, 'Conseils pour faire du yoga à la maison', 'Je suis nouveau dans le yoga et j aimerais en faire à la maison. Des conseils pour un débutant?', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', 'French'),
+(4, 'New hobby ideas', 'I need a new hobby to fill my free time. What are some hobbies that you enjoy?', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', 'English'),
+(5, 'Sugerencias de películas', 'Me encanta ver películas en mi tiempo libre. ¿Alguien tiene alguna sugerencia de películas para ver?', 'https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image', 'Spanish');
 
-INSERT INTO comments (user_id, community_board_id, comment_body,image_url) VALUES
-(1, 1, '{"I recommend checking out neighborhoods near the downtown area."}','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-(2, 1, '{"I found a great apartment using Zillow. You should give it a try!"}','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-(3, 2, '{"Puedes buscar en sitios como Idealista o Fotocasa."}','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-(4, 2, '{"Si necesitas ayuda con la mudanza, puedo recomendarte una buena empresa."}','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}'),
-(5, 3, '{"Pour trouver une maison à louer, je vous conseille de chercher sur Leboncoin ou PAP."}','{"https://dummyimage.com/400x400/6e6c6e/e9e9f5.png&text=No+Image"}');
+INSERT INTO comments (user_id, community_board_id, comment_body) VALUES
+(1, 1, 'I recommend checking out neighborhoods near the downtown area.'),
+(2, 1, 'I found a great apartment using Zillow. You should give it a try!'),
+(3, 2, 'Puedes buscar en sitios como Idealista o Fotocasa.'),
+(4, 2, 'Si necesitas ayuda con la mudanza, puedo recomendarte una buena empresa.'),
+(5, 3, 'Pour trouver une maison à louer, je vous conseille de chercher sur Leboncoin ou PAP.');
 
-INSERT INTO likes (user_id, comment_id) VALUES
-  (1, 1),
-  (2, 1),
-  (3, 2),
-  (4, 3),
-  (5, 5);
 
 INSERT INTO favorites (user_id, listing_id, community_board_id, job_id) VALUES
 (1, 1, NULL, NULL),
