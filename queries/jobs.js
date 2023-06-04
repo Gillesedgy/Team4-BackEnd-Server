@@ -12,7 +12,7 @@ const getAllJobs = async () => {
 }
 
 // SHOW ONE JOB
-const getJob = async (id) => {
+const getOneJob = async (id) => {
   try {
     const oneJob = await db.one("SELECT * FROM jobs WHERE id=$1", id)
     return oneJob
@@ -95,7 +95,7 @@ const deleteJob = async (id, userId) => {
 
 module.exports = {
   getAllJobs,
-  getJob,
+  getOneJob,
   createJob,
   deleteJob,
   updateJob,

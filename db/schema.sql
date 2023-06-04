@@ -86,14 +86,30 @@ CREATE TABLE comments(
 );
 
 
-DROP TABLE IF EXISTS favorites;
+DROP TABLE IF EXISTS fav_jobs;
 
-CREATE TABLE favorites (
-    id SERIAL PRIMARY KEY,
+CREATE TABLE fav_jobs (
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     job_id INTEGER REFERENCES jobs(id)ON DELETE CASCADE,
-    listing_id INTEGER REFERENCES listings(id) ON DELETE CASCADE,
-    community_board_id INTEGER REFERENCES community_board(id) ON DELETE CASCADE,
-    UNIQUE(user_id, community_board_id, job_id, listing_id)
+    UNIQUE(user_id, job_id)
 );
+
+DROP TABLE IF EXISTS fav_listings;
+
+CREATE TABLE fav_listings (
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    listing_id INTEGER REFERENCES listings(id) ON DELETE CASCADE,
+    UNIQUE(user_id, listing_id)
+);
+
+DROP TABLE IF EXISTS fav_community_posts;
+
+CREATE TABLE fav_community_board (
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    community_board_id INTEGER REFERENCES community_board(id) ON DELETE CASCADE,
+    UNIQUE(user_id, community_board_id)
+);
+
+
+
 

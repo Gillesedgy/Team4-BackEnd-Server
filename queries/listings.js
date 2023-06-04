@@ -1,7 +1,6 @@
 const db = require("../db/dbConfig");
 
-// Index
-
+// GET ALL LISTINGS
 const getAllListings = async () => {
   try {
     const allListings = await db.any("SELECT * FROM listings");
@@ -11,32 +10,20 @@ const getAllListings = async () => {
   }
 };
 
-// show
-const getOneListings = async (id) => {
+// GET A LISTING BY ID
+const getOneListing = async (id) => {
   try {
-    const onelistings = await db.one(
+    const onelisting = await db.one(
       "SELECT * FROM listings WHERE id = $1",
       id
     );
-    return onelistings;
+    return onelisting;
   } catch (error) {
     return error;
   }
 };
 
-const getAllListingsById = async (user_id) => {
-  try {
-    const allListingsByUser = await db.any(
-      "SELECT * FROM listings WHERE user_id = $1",
-      [user_id]
-    );
-    return allListingsByUser;
-  } catch (error) {
-    return error;
-  }
-};
-
-// create
+// CREATE A NEW LISTING
 const addListing = async (listing) => {
   try {
     const newListing = await db.one(
@@ -63,7 +50,7 @@ const addListing = async (listing) => {
   }
 };
 
-//Update
+// UPDATE A LISTING
 const updateListing = async (id, userId, listing) => {
   try {
     const updatedListing = await db.one(
@@ -91,7 +78,7 @@ const updateListing = async (id, userId, listing) => {
   }
 };
 
-// delete
+// DELETE A LISTING
 const deleteListing = async (id, userId) => {
   try {
     const deletedListing = await db.one(
@@ -106,8 +93,7 @@ const deleteListing = async (id, userId) => {
 
 module.exports = {
   getAllListings,
-  getAllListingsById,
-  getOneListings,
+  getOneListing,
   addListing,
   updateListing,
   deleteListing,

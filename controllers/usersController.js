@@ -1,23 +1,16 @@
-const express = require("express")
-const users = express.Router({ mergeParams: true })
+const express = require("express");
+const users = express.Router({ mergeParams: true });
 
-const jwtGenerator = require("../utils/jwtGenerator")
-const authorization = require("../middleware/authorization")
-const validInfo = require("../middleware/validInfo")
+const jwtGenerator = require("../utils/jwtGenerator");
+const authorization = require("../middleware/authorization");
+const validInfo = require("../middleware/validInfo");
 
 const {
   signUpUser,
   loginUser,
   userProfile,
-  userListings,
-  userDiscussion,
   userJob,
-  userFavorite,
-  userFavoriteListings,
-  userFavoriteCommunityboard,
-  userFavoriteJobs,
-} = require("../queries/users")
-
+} = require("../queries/users");
 
 // sign up
 
@@ -28,178 +21,68 @@ users.post("/signup", validInfo, async (req, res) => {
       image_url:
         req.body.image_url ||
         "https://res.cloudinary.com/dldvfnn89/image/upload/v1685495938/Screen_Shot_2023-05-30_at_9.18.39_PM_d8uzsv.png",
-    })
+    });
 
-    const { username } = user
-    const token = jwtGenerator(user.id)
+    const { username } = user;
+    const token = jwtGenerator(user.id);
 
-    res.status(200).json({ username, token: token })
+    res.status(200).json({ message: "sign up successful, please login" });
   } catch (err) {
-    return err
+    return err;
   }
-})
+});
 
 // login
 
 users.post("/login", validInfo, async (req, res) => {
   try {
-    const user = await loginUser(req.body)
+    const user = await loginUser(req.body);
 
-    const { username, id } = user
+    const { username, id } = user;
     if (username) {
-      const token = jwtGenerator(user.id)
-      res.status(200).json({ id, username, token, message: "login successful" })
+      const token = jwtGenerator(user.id);
+      res
+        .status(200)
+        .json({ id, username, token, message: "login successful" });
     } else {
-      res.status(404).json({ message: "user not found" })
+      res.status(404).json({ message: "user not found" });
     }
   } catch (err) {
-    res.status(500).json({ message: "error" })
+    res.status(500).json({ message: "error" });
   }
-})
+});
 
 // get user profile
 
 users.get("/profile", authorization, async (req, res) => {
   try {
-    const { userId } = req
+    const { userId } = req;
 
-    const user = await userProfile(userId)
+    const user = await userProfile(userId);
 
     if (!user.id) {
-      res.json({ message: "no user found" })
+      res.json({ message: "no user found" });
     }
 
     // destructure the user object
-    const { username, email, address, native_language, image_url } = user
+    const { username, email, address, native_language, image_url } = user;
 
     res
       .status(200)
-      .json({ username, email, address, native_language, image_url })
+      .json({ username, email, address, native_language, image_url });
   } catch (err) {
-    return err
+    return err;
   }
-})
-
-users.get("/listings/:id", async (req, res) => {
-  try {
-    const { id } = req.params
-
-    const user = await userListings(id)
-
-    if (!user.id) {
-      res.json({ message: "you have no listings" })
-    }
-    res.json(user)
-  } catch (err) {
-    return err
-  }
-})
-
-users.get("/jobs/:id", async (req, res) => {
-  try {
-    const { id } = req.params
-
-    const user = await userJob(id)
-    console.log(user)
-
-    if (!user) {
-      res.json({ message: "you have no job listings" })
-    }
-
-    res.json(user)
-  } catch (err) {
-    res.json(err)
-  }
-})
-
-users.get("/discussion/:id", async (req, res) => {
-  try {
-    const { id } = req.params
-
-    const user = await userDiscussion(id)
-
-    if (!user.id) {
-      res.json({ message: "you have discussions" })
-    }
-
-    const { username, post_title, post_content } = user
-
-    //res.json(user);
-    res.json({ username, post_title, post_content })
-  } catch (err) {
-    return err
-  }
-})
-
-users.post("/profile/jobs", authorization, async (req, res) => {
-  try {
-    const newJob = await createJob(req.body)
-    res.json(newJob)
-  } catch (err) {
-    console.error(err)
-  }
-})
-
-// user Favorites
-users.get("/favorites", authorization, async (req, res) => {
-  try {
-    const { userId } = req
-
-    const favorites = await userFavorite(userId)
-
-    res.status(200).json(favorites)
-  } catch (err) {
-    console.error(err)
-    res.status(500).json({ error: "Error retrieving favorites" })
-  }
-})
-
-// user favorite listings
-users.get("/listings", authorization, async (req, res) => {
-  try {
-    const { userId } = req
-    const favoriteListings = await userFavoriteListings(userId)
-    res.status(200).json(favoriteListings)
-  } catch (error) {
-    console.error(error)
-    res.status(500).json({ error: "Error retrieving favorite listings" })
-  }
-})
-
-// user favorite communityboard Post
-users.get("/communityboard", authorization, async (req, res) => {
-  try {
-    const { userId } = req
-    const userFavoriteCommunityboardPosts =
-      await userFavoriteCommunityboard(userId)
-    res.status(200).json(userFavoriteCommunityboardPosts)
-  } catch (error) {
-    console.error(error)
-    res
-      .status(500)
-      .json({ error: "Error retrieving favorite community board posts" })
-  }
-})
-
-// user favorite jobs
-users.get("/jobs", authorization, async (req, res) => {
-  try {
-    const favoriteJobs = await userFavoriteJobs(userId)
-    res.status(200).json(favoriteJobs)
-  } catch (error) {
-    console.error(error)
-    res.status(500).json({ error: "Error retrieving favorite jobs" })
-  }
-})
+});
 
 // user verify
 users.get("/verify", authorization, async (req, res) => {
   try {
-    res.json(true)
+    res.json(true);
   } catch (err) {
-    console.error(err.message)
-    res.status(500).send("Server error")
+    console.error(err.message);
+    res.status(500).send("Server error");
   }
-})
+});
 
-module.exports = users
+module.exports = users;
