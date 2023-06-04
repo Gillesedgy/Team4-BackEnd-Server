@@ -1,6 +1,6 @@
 const db = require("../db/dbConfig");
 
-// INDEX ALL DISCUSSIONS
+// GET ALL DISCUSSIONS
 const getAllDiscussions = async () => {
   try {
     const allDiscussions = await db.any("SELECT * FROM community_board");
@@ -10,8 +10,8 @@ const getAllDiscussions = async () => {
   }
 };
 
-// SHOW ONE DISCUSSION
-const getDiscussion = async (id) => {
+// GET ONE DISCUSSION
+const getOneDiscussion = async (id) => {
   try {
     const discussion = await db.one(
       "SELECT * FROM community_board WHERE id=$1",
@@ -23,7 +23,7 @@ const getDiscussion = async (id) => {
   }
 };
 
-// CREATE DISCUSSION
+// CREATE A DISCUSSION
 const createDiscussion = async (discussion) => {
   try {
     const newDiscussion = await db.one(
@@ -42,7 +42,7 @@ const createDiscussion = async (discussion) => {
   }
 };
 
-// UPDATE DISSUSSION
+// UPDATE A DISSUSSION
 const updateDiscussion = async (id, userId, discussion) => {
   try {
     const updatedDiscussion = await db.one(
@@ -53,7 +53,7 @@ const updateDiscussion = async (id, userId, discussion) => {
         discussion.image_url,
         discussion.native_language,
         id,
-        userId
+        userId,
       ]
     );
     return updatedDiscussion;
@@ -62,7 +62,7 @@ const updateDiscussion = async (id, userId, discussion) => {
   }
 };
 
-// DELETE DISCUSSION
+// DELETE A DISCUSSION
 const deleteDiscussion = async (id, userId) => {
   try {
     const deletedDiscussion = await db.one(
@@ -75,12 +75,10 @@ const deleteDiscussion = async (id, userId) => {
   }
 };
 
-
-
 module.exports = {
   getAllDiscussions,
-  getDiscussion,
+  getOneDiscussion,
   createDiscussion,
-  deleteDiscussion,
   updateDiscussion,
+  deleteDiscussion,
 };

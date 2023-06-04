@@ -5,7 +5,7 @@ const router = express.Router({ mergeParams: true });
 
 const {
   getAllJobs,
-  getJob,
+  getOneJob,
   createJob,
   deleteJob,
   updateJob,
@@ -13,6 +13,7 @@ const {
 
 const { userJob } = require("../queries/users");
 
+// GET ALL JOBS
 router.get("/", async (req, res) => {
   const allJobs = await getAllJobs();
   allJobs[0]
@@ -20,32 +21,39 @@ router.get("/", async (req, res) => {
     : res.status(500).json({ error: "server error" });
 });
 
-router.get("/:id", async (req, res) => {
-  const { id } = req.params;
-  const oneJob = await getJob(id);
-  !oneJob.message
-    ? res.status(200).json(oneJob)
-    : res.status(404).json({ error: "Job not Found!" });
-});
-
-//get job posted by user
+// GET A JOB POSTED BY USER
 router.get("/user", authorization, async (req, res) => {
   const { userId } = req;
   const usersJobs = await userJob(userId);
   res.status(200).json(usersJobs);
 });
 
-//CREATE
+// GET A JOB BY ID
+router.get("/:id", async (req, res) => {
+  const { id } = req.params;
+  const oneJob = await getOneJob(id);
+  !oneJob.message
+    ? res.status(200).json(oneJob)
+    : res.status(404).json({ error: "Job not Found!" });
+});
+
+// CREATE A JOB
 router.post("/", authorization, async (req, res) => {
   const { userId } = req;
 
-  const newJob = await createJob({ ...req.body, userId,logo: req.body.logo || "https://res.cloudinary.com/dldvfnn89/image/upload/v1685548548/Screen_Shot_2023-05-31_at_11.54.57_AM_mikwba.png" });
+  const newJob = await createJob({
+    ...req.body,
+    userId,
+    logo:
+      req.body.logo ||
+      "https://res.cloudinary.com/dldvfnn89/image/upload/v1685548548/Screen_Shot_2023-05-31_at_11.54.57_AM_mikwba.png",
+  });
   newJob
     ? res.status(200).json(newJob)
-    : res.status(500).json({ error: "error" });
+    : res.status(500).json({ error: "Job not posted" });
 });
-//UPDATE
 
+// UPDATE A JOB
 router.put("/:id", authorization, async (req, res) => {
   const { id } = req.params;
   const { userId } = req;
@@ -56,8 +64,7 @@ router.put("/:id", authorization, async (req, res) => {
     : res.status(500).json({ error: "Job not updated!" });
 });
 
-//DELETE
-
+// DELETE A JOB
 router.delete("/:id", authorization, async (req, res) => {
   const { id } = req.params;
   const { userId } = req;

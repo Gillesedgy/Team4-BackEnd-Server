@@ -94,9 +94,19 @@ INSERT INTO comments (user_id, community_board_id, comment_body) VALUES
 (5, 3, 'Pour trouver une maison à louer, je vous conseille de chercher sur Leboncoin ou PAP.');
 
 
-INSERT INTO favorites (user_id, listing_id, community_board_id, job_id) VALUES
-(1, 1, NULL, NULL),
-(2, NULL, 1, NULL),
-(3, NULL, NULL, 1),
-(4, 2, NULL, NULL),
-(5, NULL, 2, NULL);
+INSERT INTO fav_jobs (user_id, job_id) VALUES
+(1, 5),
+(1, 7),
+(1, 9),
+(2, 12),
+(3, 10);
+
+INSERT INTO fav_listings (user_id, listing_id) VALUES
+(4, 8),
+(5, 14),
+(6, 18);
+
+INSERT INTO fav_community_board (user_id, community_board_id) VALUES
+(1, 3),
+(2, 5),
+(3, 1);
