@@ -1,9 +1,9 @@
 const db = require("../db/dbConfig")
 
 // Index list of comments
-async function getAllComments() {
+async function getAllComments(communityBoardId) {
   try {
-    const allComments = await db.any("SELECT * FROM comments")
+    const allComments = await db.any("SELECT * FROM comments WHERE community_board_id=$1",[communityBoardId])
     return allComments
   } catch (error) {
     return error
@@ -19,20 +19,20 @@ async function getCommentById(id) {
     return error
   }
 }
-//Show comment by user ?
 
 // Create
 async function createComments(comment) {
   try {
     const newComment = await db.one(
       "INSERT INTO comments (user_id, community_board_id, comment_body) VALUES ($1, $2, $3) RETURNING *",
-      [comment.user_id, comment.discussion_id, comment.comment_body]
+      [comment.userId, comment.communityBoardId, comment.comment_body]
     )
     return newComment
   } catch (error) {
     return error
   }
 }
+
 // Update
 async function updateComment(id, userId, comment) {
   try {
