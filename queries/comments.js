@@ -34,11 +34,17 @@ async function createComments(comment) {
   }
 }
 // Update
-async function updateComment(id, comment) {
+async function updateComment(id, userId, comment) {
   try {
     const updatedComment = await db.one(
-      "UPDATE comments SET user_id=$1, community_board_id=$2, comment_body=$3 WHERE id=$4 RETURNING *",
-      [comment.user_id, comment.discussion_id, comment.comment_body, id]
+      "UPDATE comments SET user_id=$1, community_board_id=$2, comment_body=$3 WHERE id=$4 and user_id =$5 RETURNING *",
+      [
+        comment.userId,
+        comment.community_board_id,
+        comment.comment_body,
+        id,
+        userId,
+      ]
     )
     return updatedComment
   } catch (error) {
@@ -47,11 +53,11 @@ async function updateComment(id, comment) {
 }
 
 //Delete
-async function deleteComment(id) {
+async function deleteComment(id, userId) {
   try {
     const deletedComment = await db.one(
-      "DELETE FROM comments WHERE id=$1 RETURNING*",
-      id
+      "DELETE FROM comments WHERE id=$1 and user_id=$2 RETURNING*",
+      [id, userId]
     )
     return deletedComment
   } catch (error) {

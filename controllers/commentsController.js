@@ -1,5 +1,6 @@
 const express = require("express")
 const router = express.Router({ mergeParams: true })
+const authorization = require("../middleware/authorization")
 const {
   getAllComments,
   getCommentById,
@@ -29,31 +30,38 @@ router.get("/:id", async (req, res) => {
 })
 
 // create
-router.post("/", async (req, res) => {
+router.post("/", authorization, async (req, res) => {
+  const { communityBoardId } = req.body
+  const { userId } = req
   try {
-    const createComment = await createComments(req.body)
+    const createComment = await createComments({
+      ...req.body,
+      userId,
+      communityBoardId,
+    })
     res.status(200).json(createComment)
   } catch (error) {
     res.status(400).json({ error: "An error has accurred!" })
   }
 })
 
-// Update
-router.put("/:id", async (req, res) => {
+// / Update
+router.put("/:id", authorization, async (req, res) => {
   const { id } = req.params
-  const updatedComment = await updateComment(id, req.body)
+  const { userId } = req
+  const updatedComment = await updateComment(id, userId, req.body)
   updatedComment.id
     ? res.status(200).json(updatedComment)
     : res.status(404).json({ error: "comment not update" })
 })
 
 // Delete
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", authorization, async (req, res) => {
   const { id } = req.params
-  const deletedComments = await deleteComment(id)
+  const { userId } = req
+  const deletedComments = await deleteComment(id, userId)
   deletedComments.id
     ? res.status(200).json(deletedComments)
     : res.status(404).json("Comment Not Found!")
 })
-
 module.exports = router
