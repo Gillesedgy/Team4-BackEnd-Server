@@ -10,9 +10,9 @@ const {
 
 // Index
 router.get("/", async (req, res) => {
-  const { discussion_id } = req.params
+  const { communityBoardId } = req.params
   try {
-    const allComments = await getAllComments(discussion_id)
+    const allComments = await getAllComments(communityBoardId)
     res.status(200).json(allComments)
   } catch (error) {
     res.status(500).json({ error: "Sorry not available" })

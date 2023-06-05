@@ -13,6 +13,10 @@ const {
 
 const { userDiscussions } = require("../queries/users");
 
+const commentsController = require("./commentsController")
+
+router.use("/:communityBoardId/comments", commentsController)
+
 // GET ALL DISCUSSIONS
 router.get("/", async (req, res) => {
   const allDiscussions = await getAllDiscussions();
