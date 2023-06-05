@@ -104,7 +104,7 @@ CREATE TABLE fav_listings (
 
 DROP TABLE IF EXISTS fav_community_posts;
 
-CREATE TABLE fav_community_board (
+CREATE TABLE fav_community_posts (
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     community_board_id INTEGER REFERENCES community_board(id) ON DELETE CASCADE,
     UNIQUE(user_id, community_board_id)
