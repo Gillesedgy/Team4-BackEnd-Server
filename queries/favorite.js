@@ -88,7 +88,7 @@ const deleteFavoriteListing = async (user_id, listing_id) => {
 const favoritePosts = async (user_id) => {
   try {
     const allFavoritedPosts = await db.any(
-      "SELECT * FROM community_board where id IN (SELECT community_board_id FROM fav_community_board WHERE user_id=$1)",
+      "SELECT * FROM community_board where id IN (SELECT community_board_id FROM fav_community_posts WHERE user_id=$1)",
       [user_id]
     );
     return allFavoritedPosts;
@@ -101,7 +101,7 @@ const favoritePosts = async (user_id) => {
 const addFavoritePost = async (user_id, community_board_id) => {
   try {
     const addedFavoritePost = await db.one(
-      "INSERT INTO fav_community_board(user_id, community_board_id) VALUES($1, $2) RETURNING *",
+      "INSERT INTO fav_community_posts(user_id, community_board_id) VALUES($1, $2) RETURNING *",
       [user_id, community_board_id]
     );
     return addedFavoritePost;
@@ -115,7 +115,7 @@ const addFavoritePost = async (user_id, community_board_id) => {
 const deleteFavoritePost = async (user_id, community_board_id) => {
   try {
     const deletedFavoritePost = await db.one(
-      "DELETE FROM fav_community_board WHERE user_id=$1 AND community_board_id=$2 RETURNING *",
+      "DELETE FROM fav_community_posts WHERE user_id=$1 AND community_board_id=$2 RETURNING *",
       [user_id, community_board_id]
     );
     return deletedFavoritePost;
