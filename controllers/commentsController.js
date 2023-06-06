@@ -31,13 +31,14 @@ router.get("/:id", async (req, res) => {
 
 // create
 router.post("/", authorization, async (req, res) => {
-  const { communityBoardId } = req.body
+  const { communityBoardId } = req.params
   const { userId } = req
   try {
     const createComment = await createComments({
-      ...req.body,
+      
       userId,
       communityBoardId,
+      ...req.body
     })
     res.status(200).json(createComment)
   } catch (error) {
