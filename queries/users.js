@@ -24,24 +24,26 @@ const signUpUser = async (user) => {
   }
 };
 
+
 const loginUser = async (user) => {
-  const { username, password } = user;
+  const { username, password } = user
   try {
     const oneUser = await db.one("SELECT * FROM users WHERE username=$1", [
       username,
-    ]);
+    ])
     if (oneUser) {
-      const foundUser = await bcrypt.compare(password, oneUser.password);
-
-      if (foundUser) {
-        const { username, id } = oneUser;
-        return { username, id };
+      const isValidPassword = await bcrypt.compare(password, oneUser.password)
+ 
+ 
+      if (isValidPassword) {
+        return oneUser
       }
     }
   } catch (err) {
-    return err;
+    return err
   }
-};
+ }
+ 
 
 const userProfile = async (id) => {
   try {
