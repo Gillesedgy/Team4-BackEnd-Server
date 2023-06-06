@@ -106,7 +106,7 @@ INSERT INTO fav_listings (user_id, listing_id) VALUES
 (5, 14),
 (6, 18);
 
-INSERT INTO fav_community_board (user_id, community_board_id) VALUES
+INSERT INTO fav_community_posts (user_id, community_board_id) VALUES
 (1, 3),
 (2, 5),
 (3, 1);
