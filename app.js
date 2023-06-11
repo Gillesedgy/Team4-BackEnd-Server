@@ -1,6 +1,9 @@
 const express = require("express")
 const app = express()
 const cors = require("cors")
+const bodyParser = require('body-parser');
+
+
 
 const categoriesController = require("./controllers/categoriesController")
 const favoritesController = require("./controllers/favoritesController")
@@ -11,9 +14,11 @@ const listingsController = require("./controllers/listingsController")
 const usersController = require("./controllers/usersController")
 
 //MIDDLEWARE
+app.use(bodyParser.json({ limit: '16mb' }));
 app.use(express.json())
 app.use(cors())
-
+// app.use(express.json({limit: '16mb'})); // limits the request size
+app.use(express.urlencoded({extended: false})); 
 //routes
 app.use("/categories", categoriesController)
 app.use("/favorites", favoritesController)
