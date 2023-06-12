@@ -28,27 +28,25 @@ users.post("/signup", validInfo, async (req, res) => {
 
     res.status(200).json({ message: "sign up successful, please login" });
   } catch (err) {
-    return err;
+    res.status(500).json({ error: err });
   }
 });
 
 // login
 
-
 users.post("/login", validInfo, async (req, res) => {
   try {
-    const user = await loginUser(req.body)
+    const user = await loginUser(req.body);
     if (user.username) {
-      const token = jwtGenerator(user.id)
-      res.status(200).json({ ...user, token, message: "login successful" })
+      const token = jwtGenerator(user.id);
+      res.status(200).json({ ...user, token, message: "login successful" });
     } else {
-      res.status(404).json({ message: "user not found" })
+      res.status(404).json({ message: "user not found" });
     }
   } catch (err) {
-    res.status(500).json({ message: "error" })
+    res.status(500).json({ message: "error" });
   }
- })
- 
+});
 
 // get user profile
 
