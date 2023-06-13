@@ -9,6 +9,8 @@ const {
   createComments,
 } = require("../queries/comments")
 
+const { userProfile } = require("../queries/users")
+
 // Index
 router.get("/", async (req, res) => {
   const { communityBoardId } = req.params
