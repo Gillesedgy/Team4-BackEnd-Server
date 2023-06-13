@@ -34,21 +34,14 @@ async function createComments(comment) {
 }
 
 // Update
-async function updateComment(id, userId, comment) {
+async function createComments(comment) {
   try {
-    const updatedComment = await db.one(
-      "UPDATE comments SET user_id=$1, community_board_id=$2, comment_body=$3 WHERE id=$4 and user_id =$5 RETURNING *",
-      [
-        comment.userId,
-        comment.community_board_id,
-        comment.comment_body,
-        id,
-        userId,
-      ]
-    )
-    return updatedComment
+    const newComment = await db.one(
+      "INSERT INTO comments (user_id, community_board_id, commenter_name, comment_body) VALUES ($1, $2, $3, $4) RETURNING *",
+      [comment.userId, comment.communityBoardId, comment.commenterName, comment.comment_body]);
+    return newComment;
   } catch (error) {
-    return error
+    return error;
   }
 }
 

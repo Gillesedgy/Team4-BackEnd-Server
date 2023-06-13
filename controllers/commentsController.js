@@ -31,20 +31,23 @@ router.get("/:id", async (req, res) => {
 
 // create
 router.post("/", authorization, async (req, res) => {
-  const { communityBoardId } = req.params
-  const { userId } = req
+  const { communityBoardId } = req.params;
+  const { userId } = req;
   try {
+    const userInfo = await userProfile(userId);
+    const { username } = userInfo;
     const createComment = await createComments({
-      
       userId,
       communityBoardId,
-      ...req.body
-    })
-    res.status(200).json(createComment)
+      commenterName: username,
+      comment_body: req.body.comment_body,
+    });
+
+    res.status(200).json(createComment);
   } catch (error) {
-    res.status(400).json({ error: "An error has accurred!" })
+    res.status(400).json({ error: "An error has occurred!" });
   }
-})
+});
 
 // / Update
 router.put("/:id", authorization, async (req, res) => {
