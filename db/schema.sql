@@ -79,6 +79,7 @@ DROP TABLE IF EXISTS comments;
 CREATE TABLE comments(
  id SERIAL PRIMARY KEY,
  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+ commenter_name  TEXT REFERENCES users(username),
  community_board_id INTEGER REFERENCES community_board(id) ON DELETE CASCADE,
  comment_body TEXT,
  created_at TIMESTAMP DEFAULT NOW(),
