@@ -9,7 +9,6 @@ const {
   signUpUser,
   loginUser,
   userProfile,
-  userJob,
 } = require("../queries/users");
 
 // sign up
