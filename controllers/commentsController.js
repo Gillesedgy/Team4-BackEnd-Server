@@ -51,15 +51,22 @@ router.post("/", authorization, async (req, res) => {
   }
 });
 
-// / Update
+// Update
 router.put("/:id", authorization, async (req, res) => {
-  const { id } = req.params
-  const { userId } = req
-  const updatedComment = await updateComment(id, userId, req.body)
-  updatedComment.id
-    ? res.status(200).json(updatedComment)
-    : res.status(404).json({ error: "comment not update" })
-})
+  const { id } = req.params;
+  const { userId } = req;
+  const { comment_body } = req.body;
+  const userInfo = await userProfile(userId);
+  const { username } = userInfo;
+
+  try {
+    const updatedComment = await updateComment(id, userId, username, comment_body);
+    res.json(updatedComment);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Failed to update comment." });
+  }
+});
 
 // Delete
 router.delete("/:id", authorization, async (req, res) => {

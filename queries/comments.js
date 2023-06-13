@@ -41,22 +41,16 @@ async function createComments(comment) {
   }
 }
 
-// Update
-async function updateComment(id, userId, comment) {
+// Function to update a comment in the database
+async function updateComment(id, userId, commenterName, commentBody) {
   try {
     const updatedComment = await db.one(
-      "UPDATE comments SET user_id=$1, community_board_id=$2, comment_body=$3 WHERE id=$4 and user_id =$5 RETURNING *",
-      [
-        comment.userId,
-        comment.community_board_id,
-        comment.comment_body,
-        id,
-        userId,
-      ]
+      "UPDATE comments SET commenter_name=$1, comment_body=$2 WHERE id=$3 AND user_id=$4 RETURNING *",
+      [commenterName, commentBody, id, userId]
     );
     return updatedComment;
   } catch (error) {
-    return error;
+    return ({error:"Error updating comment."});
   }
 }
 
