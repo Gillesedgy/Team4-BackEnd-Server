@@ -13,11 +13,21 @@ const getAllListings = async () => {
 // GET A LISTING BY ID
 const getOneListing = async (id) => {
   try {
-    const onelisting = await db.one(
-      "SELECT * FROM listings WHERE id = $1",
-      id
-    );
+    const onelisting = await db.one("SELECT * FROM listings WHERE id = $1", id);
     return onelisting;
+  } catch (error) {
+    return error;
+  }
+};
+
+//Filter listing by native language
+const filterByLanguage = async (language) => {
+  try {
+    let filteredListings = await db.any(
+      "SELECT * FROM listings WHERE native_language = $1",
+      [language]
+    );
+    return filteredListings;
   } catch (error) {
     return error;
   }
@@ -29,7 +39,6 @@ const addListing = async (listing) => {
     const newListing = await db.one(
       "INSERT INTO listings(description, native_language, image_url, date_posted, price, location, is_applied, is_favorite, title, company, rooms, user_id) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING*",
       [
-        
         listing.description,
         listing.native_language,
         listing.image_url,
@@ -41,7 +50,7 @@ const addListing = async (listing) => {
         listing.title,
         listing.company,
         listing.rooms,
-        listing.userId
+        listing.userId,
       ]
     );
     return newListing;
@@ -68,7 +77,7 @@ const updateListing = async (id, userId, listing) => {
         listing.company,
         listing.rooms,
         id,
-        userId
+        userId,
       ]
     );
 
@@ -97,4 +106,5 @@ module.exports = {
   addListing,
   updateListing,
   deleteListing,
+  filterByLanguage,
 };
