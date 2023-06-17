@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
   if (language) {
     const filtered = await filterByLanguage(language);
     if (!filtered.message) {
-      res.status(200).json({ data: filtered });
+      res.status(200).json(filtered);
     } else {
       res
         .status(500)
