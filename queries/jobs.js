@@ -1,25 +1,38 @@
-const db = require("../db/dbConfig")
+const db = require("../db/dbConfig");
 
 // INDEX ALL JOBS
 
 const getAllJobs = async () => {
   try {
-    const allJobs = await db.any("SELECT * FROM jobs")
-    return allJobs
+    const allJobs = await db.any("SELECT * FROM jobs");
+    return allJobs;
   } catch (err) {
-    return err
+    return err;
   }
-}
+};
 
 // SHOW ONE JOB
 const getOneJob = async (id) => {
   try {
-    const oneJob = await db.one("SELECT * FROM jobs WHERE id=$1", id)
-    return oneJob
+    const oneJob = await db.one("SELECT * FROM jobs WHERE id=$1", id);
+    return oneJob;
   } catch (err) {
-    return err
+    return err;
   }
-}
+};
+
+//Filter jobs by native language
+const filterByNativeLanguage = async (language) => {
+  try {
+    let filteredJobs = await db.any(
+      "SELECT * FROM jobs WHERE native_language = $1",
+      [language]
+    );
+    return filteredJobs;
+  } catch (error) {
+    return error;
+  }
+};
 
 // CREATE JOB
 const createJob = async (job) => {
@@ -39,14 +52,14 @@ const createJob = async (job) => {
         job.requirements,
         job.salary,
         job.logo,
-        job.userId
+        job.userId,
       ]
-    )
-    return newJob
+    );
+    return newJob;
   } catch (err) {
-    return err
+    return err;
   }
-}
+};
 
 // UPDATE
 const updateJob = async (id, userId, job) => {
@@ -66,9 +79,8 @@ const updateJob = async (id, userId, job) => {
         job.requirements,
         job.salary,
         job.logo,
-        id,       
-        userId
-
+        id,
+        userId,
       ]
     );
     return updatedJob;
@@ -76,8 +88,6 @@ const updateJob = async (id, userId, job) => {
     return err;
   }
 };
-
-
 
 // DELETE JOB
 const deleteJob = async (id, userId) => {
@@ -87,11 +97,11 @@ const deleteJob = async (id, userId) => {
       [id, userId]
     );
 
-    return deletedJob
+    return deletedJob;
   } catch (err) {
-    return err
+    return err;
   }
-}
+};
 
 module.exports = {
   getAllJobs,
@@ -99,4 +109,5 @@ module.exports = {
   createJob,
   deleteJob,
   updateJob,
-}
+  filterByNativeLanguage,
+};

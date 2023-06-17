@@ -9,16 +9,29 @@ const {
   createJob,
   deleteJob,
   updateJob,
+  filterByNativeLanguage,
 } = require("../queries/jobs");
 
 const { userJob } = require("../queries/users");
 
 // GET ALL JOBS
 router.get("/", async (req, res) => {
-  const allJobs = await getAllJobs();
-  allJobs[0]
-    ? res.status(200).json(allJobs)
-    : res.status(500).json({ error: "server error" });
+  const { language } = req.query;
+  if (language) {
+    const filtered = await filterByNativeLanguage(language);
+    if (!filtered.message) {
+      res.status(200).json(filtered);
+    } else {
+      res
+        .status(500)
+        .json({ error: "An issue occurred with the language filter" });
+    }
+  } else {
+    const allJobs = await getAllJobs();
+    allJobs[0]
+      ? res.status(200).json(allJobs)
+      : res.status(500).json({ error: "server error" });
+  }
 });
 
 // GET A JOB POSTED BY USER
