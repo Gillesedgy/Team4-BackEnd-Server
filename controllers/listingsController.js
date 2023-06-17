@@ -8,18 +8,31 @@ const {
   addListing,
   updateListing,
   deleteListing,
+  filterByLanguage,
 } = require("../queries/listings");
 
 const { userListings } = require("../queries/users");
 
-// GET ALL LISTINGS
+// Get filtered listings or get all
 router.get("/", async (req, res) => {
-  const allListings = await getAllListings();
-  allListings[0]
-    ? res.status(200).json(allListings)
-    : res
+  const { language } = req.query;
+  if (language) {
+    const filtered = await filterByLanguage(language);
+    if (!filtered.message) {
+      res.status(200).json({ data: filtered });
+    } else {
+      res
         .status(500)
-        .json({ error: "An error has accured getting all the listings" });
+        .json({ error: "An issue occurred with the language filter" });
+    }
+  } else {
+    const allListings = await getAllListings();
+    allListings[0]
+      ? res.status(200).json(allListings)
+      : res
+          .status(500)
+          .json({ error: "An error has accured getting all the listings" });
+  }
 });
 
 // GET A LISTING POSTED BY USER
