@@ -31,4 +31,10 @@ You can now start the backend server by running the following command:
     type in nodemon in your terminal
 
 This will start your backend server and make it accessible at the 'PORT' in your environmental configuration.
+
+Contributing
+
+If you wish to contribute to this project, please follow the guidelines mentioned in the CONTRIBUTING.md file.
+
+
  
