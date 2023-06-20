@@ -5,7 +5,7 @@ Installation
  To install the required dependencies, run the following command:
  - npm install
 
- This will install all the necessary packages and dependencies for the backend  
+ This will install all the necessary packages and dependencies for the backend.  
 
 Environment Configuration
 
