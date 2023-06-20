@@ -34,7 +34,7 @@ This will start your backend server and make it accessible at the 'PORT' in your
 
 Contributing
 
-If you wish to contribute to this project, please follow the guidelines mentioned in the CONTRIBUTING.md file.
+If you wish to contribute to this project, please follow the guidelines mentioned in the FrontEnd readme file.
 
 
  
