@@ -12,6 +12,7 @@ Environment Configuration
 - Create a new file named '.env' in the root directory of your project
 - Add the '.env' file to your 'gitignore' file to ensure it is not committed to version control.
 - Inside the '.env' file, add the following environment variables:
+  
        -- PORT=your_own_port_number
        -- PG_HOST=localhost
        -- PG_PORT=your_own_postgres_port_number
