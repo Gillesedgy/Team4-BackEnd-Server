@@ -12,12 +12,12 @@ Environment Configuration
 - Create a new file named '.env' in the root directory of your project
 - Add the '.env' file to your 'gitignore' file to ensure it is not committed to version control.
 - Inside the '.env' file, add the following environment variables:
-       PORT=your_own_port_number
-       PG_HOST=localhost
-       PG_PORT=your_own_postgres_port_number
-       PG_DATABASE=your_chosen_database_name
-       PG_USER=postgres
-       SECRETKEY=your_secret_key
+       * PORT=your_own_port_number
+       * PG_HOST=localhost
+       * PG_PORT=your_own_postgres_port_number
+       * PG_DATABASE=your_chosen_database_name
+       * PG_USER=postgres
+       * SECRETKEY=your_secret_key
 
 Make sure you replace the values with your own. The 'PORT' variable specifies the port number on which the backenbd server will run on. The 'PG_HOST', 'PG_PORT', 'PG_DATABASE', and 'PG_USER' variables will specify which PostgreSQL database connection. The 'SECRETKEY' variable should be asecretkey of your choosing for secure operations
 Then save the '.env' file.
