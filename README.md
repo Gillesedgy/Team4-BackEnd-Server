@@ -1,6 +1,6 @@
 This repository contains the backend code for **Out&Abt** project. Below are the instructions to set up the backend environment and configure the necessary files.
 
-## Installation**
+## Installation
 
  To install the required dependencies, run the following command:
 
@@ -10,7 +10,7 @@ This repository contains the backend code for **Out&Abt** project. Below are the
  This will install all the necessary packages and dependencies for the backend.  
  
 
-**Environment Configuration**
+## Environment Configuration
 
 - Create a new file named '.env' in the root directory of your project
 - Add the '.env' file to your 'gitignore' file to ensure it is not committed to version control.
@@ -34,7 +34,7 @@ You can now start the backend server by running the following command:
 This will start your backend server and make it accessible at the 'PORT' in your environmental configuration.
 
 
-**Contributing**
+## Contributing
 
 If you wish to contribute to this project, please follow the guidelines mentioned in the FrontEnd readme file.
 
