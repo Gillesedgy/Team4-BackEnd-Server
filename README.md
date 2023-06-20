@@ -1,6 +1,6 @@
 This repository contains the backend code for **Out&Abt** project. Below are the instructions to set up the backend environment and configure the necessary files.
 
-**Installation**
+## Installation**
 
  To install the required dependencies, run the following command:
 
