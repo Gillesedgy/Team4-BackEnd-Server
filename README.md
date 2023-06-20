@@ -8,6 +8,7 @@ This repository contains the backend code for **Out&Abt** project. Below are the
       npm install
 
  This will install all the necessary packages and dependencies for the backend.  
+ 
 
 **Environment Configuration**
 
@@ -31,6 +32,7 @@ You can now start the backend server by running the following command:
     type in nodemon in your terminal
 
 This will start your backend server and make it accessible at the 'PORT' in your environmental configuration.
+
 
 **Contributing**
 
